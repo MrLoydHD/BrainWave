@@ -6,3 +6,28 @@
 .slider-custom .rc-slider-track {
     background-color: #000;
   }
+
+.image-container {
+    width: 90px;
+    height: 40px;
+    margin-left: 10px;
+  }
+
+.hidden {
+    display: none;
+  }
+
+.alert-box {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+  }
+  
+.alert {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  

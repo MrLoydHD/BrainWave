@@ -10,7 +10,7 @@ function App() {
       <Routes>
 				<Route path="/" Component={Home} />
         <Route path="/TodosCursos" Component={TodosCursos} />
-        <Route path="/TodosCursos/Curso" Component={Course}></Route>
+        <Route path="/TodosCursos/:id" Component={Course} />
 			</Routes>
 		</BrowserRouter>
   )

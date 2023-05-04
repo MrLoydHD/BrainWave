@@ -1,7 +1,6 @@
 import Navbar from '../components/Navbar'
 import Info from '../components/CourseInfo'
 import Sidebar from '../components/CourseSidebar'
-import image from '../Images/matematica.jpeg';
 
 function TodosCursos() {
   return (
