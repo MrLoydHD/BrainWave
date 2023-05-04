@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar'
 import Search from '../components/TodosCursosSearch'
 import Filters from '../components/TodosCursosFilters'
+import Courses from '../components/TodosCursosCourses'
 
 function TodosCursos() {
   return (
@@ -16,8 +17,8 @@ function TodosCursos() {
                 <div className='w-1/4 ml-4'>
                     <Filters></Filters>
                 </div>
-                <div className='w-3/4'>
-                    
+                <div className='w-3/4 p-10'>
+                    <Courses></Courses>
                 </div>
             </div>
             
