@@ -10,13 +10,37 @@ function CourseInfo() {
 
     const [showAlert, setShowAlert] = useState(false);
 
-    const handleBuyClick = () => {
+    const handleSubmit = () => {
+        var id = course.id;
+        var name = course.name;
+        var image = course.image;
+        var subject = course.subject;
+        var prof = course.prof;
+        var description = course.description;
+        var price = course.price;
+        var rating = course.rating;
+        var subject = course.subject;
+        var discount = course.discount;
+
         setShowAlert(true);
 
         setTimeout(() => {
             setShowAlert(false);
         }, 5000); // 5000 milisegundos = 5 segundos
-    };
+
+        const course1 = { id, name, image, subject, prof, description, price, rating, subject, discount };
+    
+        fetch('http://localhost:3001/myCourses', {
+          method: 'POST',
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(course1)
+        }).then(() => {
+          // history.go(-1);
+          // history.push('/');
+        })
+      }
+
+
 
     return (
         <>
@@ -68,7 +92,7 @@ function CourseInfo() {
                                                 <span className="ml-2 text-gray-700">Salvar cartão para compras futuras</span>
                                             </label>
                                         </div>
-                                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4" onClick={handleBuyClick}>
+                                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4" onClick={handleSubmit}>
                                             Comprar
                                         </button>
                                         <p className="text-center">ou</p>
@@ -104,9 +128,10 @@ function CourseInfo() {
 
                     {showAlert && (
                         <div className="alert-box">
-                        <div className="alert bg-green-500 text-white">
-                            Compra bem sucedida!
-                        </div>
+                            <div className="alert bg-green-500 text-white">
+                                <p>Compra bem sucedida!</p> 
+                                <p>Verifique em "Meu Espaço"</p> 
+                            </div>
                         </div>
                     )}
                 </>

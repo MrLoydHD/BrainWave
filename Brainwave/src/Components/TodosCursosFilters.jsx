@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import '../App.css';
+import useFetch from '../Hooks/useFetch';
 
 function TodosCursosFilters() {
     const [valorSlider, setValorSlider] = useState(0);
@@ -9,6 +10,7 @@ function TodosCursosFilters() {
     const handleChange = (value) => {
         setValorSlider(value);
     }
+
   return (
     <div>
         <div className='flex justify-center shadow-md'>

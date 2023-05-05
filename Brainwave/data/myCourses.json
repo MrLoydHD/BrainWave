@@ -1,0 +1,37 @@
+{
+  "myCourses": [
+    {
+      "id": 1,
+      "name": "Introdução à Programação",
+      "image": "https://via.placeholder.com/800x400",
+      "subject": "Informática",
+      "prof": "Pedro Silva",
+      "description": "Aprenda as bases da programação em linguagem C.",
+      "price": 90,
+      "rating": 4.2,
+      "discount": 0.2
+    },
+    {
+      "id": 2,
+      "name": "Marketing Digital",
+      "image": "https://via.placeholder.com/800x400",
+      "subject": "Marketing",
+      "prof": "Ana Santos",
+      "description": "Aprenda a criar e gerenciar campanhas de marketing digital.",
+      "price": 120,
+      "rating": 4.8,
+      "discount": 0.15
+    },
+    {
+      "id": 5,
+      "name": "Artesanato em Madeira",
+      "image": "https://via.placeholder.com/800x400",
+      "subject": "Artesanato",
+      "prof": "Joaquim Silva",
+      "description": "Aprenda a criar peças de artesanato em madeira utilizando técnicas tradicionais.",
+      "price": 200,
+      "rating": 4.9,
+      "discount": 0.05
+    }
+  ]
+}
