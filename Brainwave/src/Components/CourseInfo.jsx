@@ -30,7 +30,7 @@ function CourseInfo() {
 
         const course1 = { id, name, image, subject, prof, description, price, rating, subject, discount };
     
-        fetch('http://localhost:3001/myCourses', {
+        fetch('http://localhost:3000/myCourses', {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(course1)
