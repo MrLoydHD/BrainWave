@@ -40,7 +40,7 @@
       "prof": "Sarah Johnson",
       "description": "Aprenda a se comunicar em inglês em situações de negócios.",
       "price": 80,
-      "rating": 4.0,
+      "rating": 4,
       "subject": "Idiomas",
       "discount": 0.3
     },
@@ -99,5 +99,8 @@
       "subject": "Marketing",
       "discount": 0.1
     }
+  ],
+  "myCourses": [
+    
   ]
 }
