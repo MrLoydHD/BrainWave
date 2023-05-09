@@ -1,6 +1,6 @@
-import Navbar from '../components/Navbar'
-import HomeSearch from '../components/HomeSearch'
-import HomeCarousel from '../components/HomeCarousel'
+import Navbar from '../Components/Navbar'
+import HomeSearch from '../Components/HomeSearch'
+import HomeCarousel from '../Components/HomeCarousel'
 
 function Home() {
   return (

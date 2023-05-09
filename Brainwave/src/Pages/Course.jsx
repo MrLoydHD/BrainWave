@@ -1,6 +1,6 @@
-import Navbar from '../components/Navbar'
-import Info from '../components/CourseInfo'
-import Sidebar from '../components/CourseSidebar'
+import Navbar from '../Components/Navbar'
+import Info from '../Components/CourseInfo'
+import Sidebar from '../Components/CourseSidebar'
 
 function TodosCursos() {
   return (

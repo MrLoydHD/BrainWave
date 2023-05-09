@@ -1,7 +1,7 @@
-import Navbar from '../components/Navbar'
-import Search from '../components/TodosCursosSearch'
-import Filters from '../components/TodosCursosFilters'
-import Courses from '../components/TodosCursosCourses'
+import Navbar from '../Components/Navbar'
+import Search from '../Components/TodosCursosSearch'
+import Filters from '../Components/TodosCursosFilters'
+import Courses from '../Components/TodosCursosCourses'
 
 function TodosCursos() {
   return (
