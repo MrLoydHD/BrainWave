@@ -3,8 +3,7 @@ import useFetch from '../Hooks/useFetch';
 import CourseList from './CourseList';
 
 
-function TodosCursosCourses() {
-    const { error, isPending, data: courses } = useFetch('http://localhost:3000/courses')
+function TodosCursosCourses({ error, isPending, courses }) {
 
     return (
         <div>
