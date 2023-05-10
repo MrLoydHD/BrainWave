@@ -13,13 +13,13 @@
     },
     {
       "id": 2,
-      "name": "Marketing Digital",
+      "name": "Funções Trigonométricas",
       "image": "https://via.placeholder.com/800x400",
       "prof": "Ana Santos",
-      "description": "Aprenda a criar e gerenciar campanhas de marketing digital.",
+      "description": "Aprenda a calcular funções trigonométricas e suas aplicações práticas.",
       "price": 120,
       "rating": 4.8,
-      "subject": "Marketing",
+      "subject": "Matemática",
       "discount": 0.15
     },
     {
@@ -29,7 +29,7 @@
       "prof": "Miguel Pereira",
       "description": "Aprenda a tirar fotos profissionais utilizando técnicas de iluminação e composição.",
       "price": 150,
-      "rating": 4.6,
+      "rating": 3.5,
       "subject": "Fotografia",
       "discount": 0.1
     },
@@ -73,7 +73,7 @@
       "prof": "Ricardo Santos",
       "description": "Aprenda técnicas de negociação e persuasão para obter melhores resultados em suas negociações.",
       "price": 80,
-      "rating": 4.1,
+      "rating": 2.9,
       "subject": "Negócios",
       "discount": 0.25
     },
@@ -98,6 +98,17 @@
       "rating": 4.5,
       "subject": "Marketing",
       "discount": 0.1
+    },
+    {
+      "id": 10,
+      "name": "Geometria Plana",
+      "image": "https://via.placeholder.com/800x400",
+      "prof": "Ana Santos",
+      "description": "Provas que a Geometria serve para resolver qualquer caso amoroso.",
+      "price": 120,
+      "rating": 2.9,
+      "subject": "Matemática",
+      "discount": 0.15
     }
   ],
   "myCourses": [
