@@ -3,7 +3,7 @@ import image from '../Images/matematica.jpeg';
 
 function HomeCarousel() {
   return (
-    <div className="carousel w-10/12">
+    <div className="carousel py-10">
         <div id="slide1" className="carousel-item relative w-full flex justify-center items-center">
             <div className="px-3 flex justify-center w-1/4">
                 <div className="card w-full bg-base-100">

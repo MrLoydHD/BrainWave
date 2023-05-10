@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.dark-overlay {
+    position: relative;
+    background-image: url("src/Images/education.jpg");
+  }
+  
+.dark-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the last value for opacity */
+  }
+  
