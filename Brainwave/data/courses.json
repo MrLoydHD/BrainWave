@@ -90,28 +90,39 @@
     },
     {
       "id": 9,
-      "name": "Marketing de Conteúdo",
-      "image": "https://via.placeholder.com/800x400",
-      "prof": "Joana Costa",
-      "description": "Aprenda a criar e gerenciar uma estratégia de marketing de conteúdo para sua empresa.",
-      "price": 120,
-      "rating": 4.5,
-      "subject": "Marketing",
-      "discount": 0.1
-    },
-    {
-      "id": 10,
-      "name": "Geometria Plana",
+      "name": "Geometria para o Amor",
       "image": "https://via.placeholder.com/800x400",
       "prof": "Ana Santos",
       "description": "Provas que a Geometria serve para resolver qualquer caso amoroso.",
-      "price": 120,
+      "price": 80,
       "rating": 2.9,
       "subject": "Matemática",
       "discount": 0.15
+    },
+    {
+      "id": 10,
+      "name": "Desenvolvimento Web Avançado",
+      "image": "https://via.placeholder.com/800x400",
+      "prof": "Maria Sousa",
+      "description": "Aprofunde seus conhecimentos em desenvolvimento web com HTML, CSS e JavaScript.",
+      "price": 120,
+      "rating": 3.9,
+      "subject": "Informática",
+      "discount": 0.1
     }
+    
   ],
   "myCourses": [
-    
+    {
+      "id": 1,
+      "name": "Introdução à Programação",
+      "image": "https://via.placeholder.com/800x400",
+      "subject": "Informática",
+      "prof": "Pedro Silva",
+      "description": "Aprenda as bases da programação em linguagem C.",
+      "price": 90,
+      "rating": 4.2,
+      "discount": 0.2
+    }
   ]
 }

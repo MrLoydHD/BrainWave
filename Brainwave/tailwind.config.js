@@ -6,6 +6,9 @@ module.exports = {
       height: {
         '128' : '40rem'
       },
+      width: {
+        '100' : '38rem'
+      }
     },
   },
   plugins: [require("daisyui")],
