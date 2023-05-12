@@ -1,5 +1,4 @@
 import React from 'react';
-import useFetch from '../Hooks/useFetch';
 import CourseList from './CourseList';
 
 

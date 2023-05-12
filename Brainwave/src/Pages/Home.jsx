@@ -4,7 +4,7 @@ import HomeCarousel from '../Components/HomeCarousel'
 
 function Home() {
   return (
-    <div className='bg-green-20 min-h-screen'>
+    <div className='bg-TeaGreen min-h-screen'>
         <header>
           <Navbar></Navbar>
         </header> 
@@ -12,7 +12,7 @@ function Home() {
           <HomeSearch></HomeSearch>
         </main>
         <div className='flex-auto text-center'>
-                <p className='text-6xl'>Cursos Populares</p>
+                <p className='text-6xl font-bold'>Cursos Populares</p>
                 <HomeCarousel></HomeCarousel>
         </div>
     </div>

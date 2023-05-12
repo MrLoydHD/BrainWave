@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import image from '../Images/novoutilizador.jpg';
-import "tailwindcss/tailwind.css"
 
 function Navbar() {
   return (
-    <div className="navbar bg-green-500">
+    <div className="navbar bg-primary font-bold">
       <div className="flex-1">
-        <Link to={"/"} className="btn btn-ghost hover:bg-transparent normal-case text-2xl text-white">Brainwave Academy</Link>
+        <Link to={"/"} className="btn btn-ghost hover:bg-transparent normal-case text-3xl">Brainwave Academy</Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal text-xl px-1">
           <li tabIndex={0} className='z-10'>
               <Link to="#">
                 Cursos
@@ -29,7 +28,7 @@ function Navbar() {
                 </Link>
                 <ul className="p-2 bg-base-100 z-10">
                   <li><Link to={"/MeusCursos"}>Meus cursos</Link></li>
-                  <li><Link to="#">Meu calendário</Link></li>
+                  <li><Link to={"/EventCalendar"}>Meu calendário</Link></li>
                 </ul>
             </li>
         </ul>
