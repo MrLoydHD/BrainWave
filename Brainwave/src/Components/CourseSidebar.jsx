@@ -27,15 +27,15 @@ function CourseSidebar({ thisCourse }) {
                       <div className="w-1/2 bg-cover bg-center" style={{ backgroundImage: `url(${course.image})` }}></div>
                       <div className="flex-1 flex flex-col justify-between p-4">
                           <div>
-                              <h1 className="text-lg font-bold mb-2">{ course.name }</h1>
+                              <div className="flex justify-between">
+                                <h1 className="text-lg font-bold mb-2 flex-grow">{ course.name }</h1>
+                                <div className="bg-green-500 text-white text-sm rounded-full px-3 py-1 max-h-8">{ course.price }€</div>
+                              </div>
                               <div className="mb-2">
                                   <p className="text-gray-700 text-sm">Professor: { course.prof }</p>
                                   <p className="text-gray-700 text-sm">Avaliação: { course.rating } estrelas</p>
                               </div>
                               <p className="text-gray-700 text-sm mb-4">{ course.description }</p>
-                          </div>
-                          <div className="absolute top-0 right-0 p-4">
-                              <div className="bg-green-500 text-white text-sm rounded-full px-3 py-1">{ course.price }€</div>
                           </div>
                           <div className="absolute bottom-0 right-0 p-4">
                               <div className="bg-gray-200 text-gray-500 text-xs rounded-full px-3 py-1">{ course.subject }</div>
