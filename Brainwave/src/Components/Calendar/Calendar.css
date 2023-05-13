@@ -1,0 +1,25 @@
+.rbc-off-range-bg { 
+    background-color: azure !important;
+    opacity: 0.5 !important;
+}
+
+.rbc-today, .rbc-today *{
+    background-color: rgb(178, 247, 206) !important;
+}
+
+.rbc-header{
+    background-color: rgb(178, 247, 206) !important;
+}
+
+.rbc-active{
+    background-color: rgb(178, 247, 206) !important;
+}
+
+.rbc-toolbar-label{
+    font-size: larger !important;
+
+}
+
+.rbc-toolbar{
+    background-color: rgb(178, 247, 206) !important;
+}

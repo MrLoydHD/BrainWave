@@ -75,12 +75,12 @@ function TodosCursos() {
     }
 
     return (
-        <div className='bg-gray-200 min-h-screen'>
+        <div className='bg-TeaGreen min-h-screen'>
             <header>
                 <Navbar></Navbar>
             </header> 
             <main>
-                <div className='flex justify-center items-center mt-10 shadow-lg'>
+                <div className='flex justify-center items-center mt-10'>
                     <Search></Search>
                 </div>
                 <div className='flex w-full mt-10'>
@@ -145,9 +145,9 @@ function TodosCursos() {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex justify-center'>
-                            <button className="btn bg-red-800 border-red-800 py-4 text-xl text-white text-center hover:bg-red-900 hover:border-red-900" onClick={resetFilters}>Apagar filtros</button>
-                            <button className="btn btn-black py-4 text-xl text-white text-center" onClick={filterResults}>Aplicar filtros</button>
+                        <div className='flex justify-center gap-2'>
+                            <button className="btn bg-red-800 content-center border-red-800 py-4 text-xl text-white hover:bg-red-900 hover:border-red-900" onClick={resetFilters}>Apagar filtros</button>
+                            <button className="btn py-4 bg-green-600 border-green-600 hover:bg-green-900 hover:border-green-900 text-xl content-center text-white" onClick={filterResults}>Aplicar filtros</button>
                         </div>
                     </div>
                     <div className='w-3/4 p-10'>

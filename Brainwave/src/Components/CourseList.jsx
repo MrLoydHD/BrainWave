@@ -5,7 +5,7 @@ const CourseList = ({ courses }) => {
     <div>
         {courses.map(course => (
             <Link to={`/TodosCursos/${course.id}`}>
-                <div className="bg-white border border-gray-300 rounded-lg shadow-md flex h-48 w-full relative mb-5 hover:shadow-xl transform hover:scale-105 transition duration-500">
+                <div className="bg-white border border-gray-300 rounded-lg shadow-lg flex h-48 w-full relative mb-5 hover:shadow-xl transform hover:scale-105 transition duration-500">
                     <div className="w-1/2 bg-cover bg-center" style={{ backgroundImage: `url(${course.image})` }}></div>
                     <div className="flex-1 flex flex-col justify-between p-4">
                         <div>

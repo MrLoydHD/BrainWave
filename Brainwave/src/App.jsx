@@ -4,6 +4,7 @@ import Home from './Pages/Home'
 import TodosCursos from './Pages/TodosCursos'
 import Course from './Pages/Course'
 import MeusCursos from './Pages/MeusCursos'
+import EventCalendar from './Pages/EventCalendar'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/TodosCursos" Component={TodosCursos} />
         <Route path="/TodosCursos/:id" Component={Course} />
         <Route path="/MeusCursos" Component={MeusCursos}></Route>
+        <Route path="/EventCalendar" Component={EventCalendar}></Route>
 			</Routes>
 		</BrowserRouter>
   )
