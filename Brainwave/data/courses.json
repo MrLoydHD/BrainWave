@@ -24,7 +24,49 @@
       "subject": "Matemática",
       "discount": 0.15,
       "numVideos": 8,
-      "numReviews": 29
+      "numReviews": 29,
+      "videos": [
+        {
+          "id": 1,
+          "name": "Introdução",
+          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+        },
+        {
+          "id": 2,
+          "name": "Seno",
+          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+        },
+        {
+          "id": 3,
+          "name": "Cosseno",
+          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+        },
+        {
+          "id": 4,
+          "name": "Tangente",
+          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+        },
+        {
+          "id": 5,
+          "name": "Cotangente",
+          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+        },
+        {
+          "id": 6,
+          "name": "Secante",
+          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+        },
+        {
+          "id": 7,
+          "name": "Cossecante",
+          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+        },
+        {
+          "id": 8,
+          "name": "Exercícios",
+          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+        }
+      ]
     },
     {
       "id": 3,
@@ -130,7 +172,6 @@
       "numVideos": 6,
       "numReviews": 15
     }
-    
   ],
   "myCourses": [
     {
@@ -143,6 +184,17 @@
       "price": 90,
       "rating": 4.2,
       "discount": 0.2
+    },
+    {
+      "id": 10,
+      "name": "Desenvolvimento Web Avançado",
+      "image": "https://via.placeholder.com/800x400",
+      "subject": "Informática",
+      "prof": "Maria Sousa",
+      "description": "Aprofunde seus conhecimentos em desenvolvimento web com HTML, CSS e JavaScript.",
+      "price": 120,
+      "rating": 3.9,
+      "discount": 0.1
     }
   ]
 }

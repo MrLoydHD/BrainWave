@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-function HomeSearch() {
+function HomeSearch({ isPending, courses}) {
   const [searchTerm, setSearchTerm] = useState("");
-  const options = ["Matematica", "Biologia", "Geologia"];
 
   return (
     //CUIDADO COM ESTE ABSOLUTE

@@ -2,6 +2,16 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
+      // container: {
+      //   center: true,
+      //   padding: '2rem',
+      //   screens: {
+      //     'sm': '640px',
+      //     'md': '768px',
+      //     'lg': '1024px',
+      //     'xl': '1280px',
+      //   },
+      // },
     extend: {
       height: {
         '128' : '40rem'
@@ -21,6 +31,16 @@ module.exports = {
         'celeste': '#9ceaefff',
         'celeste2': '#c4fff9ff',
       },
+      // container: {
+      //   center: true,
+      //   padding: '2rem',
+      //   screens: {
+      //     'sm': '640px',
+      //     'md': '768px',
+      //     'lg': '1024px',
+      //     'xl': '1280px',
+      //   },
+      // },
     },
   },
   plugins: [require("daisyui")],

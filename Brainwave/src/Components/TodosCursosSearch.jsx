@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 
-function TodosCursosSearch() {
+function TodosCursosSearch({ courses }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const options = ["Matemática", "Biologia", "Geologia"];
+  const subjects = [...new Set(courses.map(course => course.subject))];
+  const titles = [...new Set(courses.map(course => course.name))];
+  const options = [...subjects, ...titles];
   
   return (
     <div className='relative flex items-center w-full'>
