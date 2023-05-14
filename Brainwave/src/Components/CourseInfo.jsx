@@ -54,7 +54,7 @@ function CourseInfo({ course, error, isPending}) {
                             <h2 className="text-2xl font-bold bg-green-500 rounded-full px-3 py-1" type="text" value={ course.price }>{ course.price }€/mês</h2>
                         </div>
                         <img className="w-full h-96 object-cover mb-4" src="https://via.placeholder.com/800x400" alt="Imagem do Curso" />
-                        <div className="flex justify-between items-center mb-4">
+                        <div className="flex justify-between items-center mb-4 pb-14">
                             <h3 className="text-xl font-bold">Disciplina: { course.subject }</h3>
                             <h3 className="text-xl font-bold">Nº de vídeos: { course.numVideos }</h3>
                             <div className='flex flex-row items-center gap-2'>
@@ -64,9 +64,11 @@ function CourseInfo({ course, error, isPending}) {
                             <label htmlFor="modal" className="bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded">
                                 Comprar
                             </label>
+                        </div> 
+                        <div className="p-6 space-y-6 bg-white shadow-lg rounded-box">
+                            <h1 className="text-3xl font-bold py-4">Descrição:</h1>
+                            <p className="mb-4">{ course.description }</p>
                         </div>
-                        <h1 className="text-3xl font-bold py-4">Descrição:</h1>
-                        <p className="mb-4">{ course.description }</p>
                     </div>
 
                     <input type="checkbox" id="modal" className="modal-toggle" />

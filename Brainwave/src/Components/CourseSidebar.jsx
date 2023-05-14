@@ -47,7 +47,7 @@ function CourseSidebar({ thisCourse }) {
             </div>
             <div className="p-4">
             <h4 className="text-xl font-bold mb-4">Comentários de Avaliação</h4>
-            <div className="p-6 space-y-6 bg-base-200 rounded-box">
+            <div className="p-6 space-y-6 rounded-box">
               {reviews.map(review => (
                 <div key={review.id} className="card shadow-lg compact bg-base-100 transform scale-120 w-100 h-32">
                   <div className="card-body">
