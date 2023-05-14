@@ -53,7 +53,7 @@ function MeuCursoVideos() {
 
   
     return (
-      !isPending && (<div className='bg-gray-200 min-h-screen'>
+      !isPending && (<div className='lili min-h-screen'>
           <header>
               <Navbar></Navbar>
           </header> 

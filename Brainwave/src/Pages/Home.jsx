@@ -7,7 +7,7 @@ function Home() {
   const { error, isPending, data: courses } = useFetch('http://localhost:3000/courses/');
 
   return (
-    <div className='bg-TeaGreen min-h-screen'>
+    <div className='lili min-h-screen'>
         <header>
           <Navbar></Navbar>
         </header> 

@@ -13,6 +13,9 @@ module.exports = {
       //   },
       // },
     extend: {
+      bottom:{
+        '128' : '40rem'
+      },
       height: {
         '128' : '40rem'
       },

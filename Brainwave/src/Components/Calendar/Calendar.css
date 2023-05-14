@@ -43,3 +43,7 @@
 .rbc-event-allday{
     background-color: rgba(56, 185, 51, 0.877) !important;
 }
+
+.bottom-128 {
+    bottom: 46rem;
+}

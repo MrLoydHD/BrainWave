@@ -5,7 +5,7 @@ import useFetch from '../Hooks/useFetch'
 function MeusCursos() {
     const { error, isPending, data: courses } = useFetch('http://localhost:3000/myCourses');
     return (
-        <div className='bg-gray-200 min-h-screen'>
+        <div className='lili min-h-screen'>
             <header>
                 <Navbar></Navbar>
                     <div className="rounded-lg m-3 flex justify-center items-center mt-10">
