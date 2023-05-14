@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 function Card({ name, comment }) {
   return (
-    <>
+    <div className='lili'>
         <Link to={"/MeuCursoVideos/1"}>
-            <div className="flex items-center space-x-4 p-2 bg-white shadow-sm rounded-md">
+            <div className="flex items-center space-x-4 p-2 border border-solid shadow-lg rounded-md">
             <img className="w-10 h-10 object-cover rounded-full" src={image} alt={name} />
             <div className="flex-1">
                 <p className="font-medium">{name} comentou:</p>
@@ -16,7 +16,7 @@ function Card({ name, comment }) {
             <img className="w-16 h-9" src={image} alt="Content preview" />
             </div>
         </Link>
-    </>
+    </div>
   );
 }
 

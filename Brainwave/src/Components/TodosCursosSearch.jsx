@@ -11,9 +11,9 @@ function TodosCursosSearch({ courses }) {
   return (
     <div className='relative z-10 flex items-center w-full'>
       <div className="rounded-lg m-3 w-10/12">
-        <h1 className="text-7xl ml-6 text-gray-800">Todos os Cursos</h1>
+        <h1 className="text-7xl ml-28 text-gray-800 ">Todos os Cursos</h1>
       </div>
-      <div className='relative mt-4 w-10/12 mr-10'>
+      <div className='relative mt-4 w-8/12 mr-40'>
         <div className="shadow-lg flex justify-between w-full bg-transparent mr-10">
           <input type="text" placeholder="Pesquisa aqui..." className="input input-bordered w-full rounded-r-none" value={searchTerm} onChange={(event) => {
               setSearchTerm(event.target.value);
