@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Card({ name, comment }) {
   return (
-    <div className='lili'>
+    <div className='bg-base-100'>
         <Link to={"/MeuCursoVideos/1/1"}>
             <div className="flex items-center space-x-4 p-2 bg-white shadow-sm rounded-md">
             <img className="w-10 h-10 object-cover rounded-full" src={image} alt={name} />

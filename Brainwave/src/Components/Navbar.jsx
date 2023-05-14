@@ -45,7 +45,7 @@ function Navbar() {
                 Cursos
                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
               </Link>
-              <ul className="p-2 lili text-lg shadow-lg bg-base-100">
+              <ul className="p-2 bg-base-100 text-lg shadow-lg bg-base-100">
                 <li><Link to="#">Para ti</Link></li>
                 <li><Link to={"/TodosCursos"}>Todos cursos</Link></li>
               </ul>
@@ -56,7 +56,7 @@ function Navbar() {
                 Meu Espaço
                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
               </Link>
-              <ul className="p-2 lili shadow-lg text-lg bg-base-100 z-20">
+              <ul className="p-2 bg-base-100 shadow-lg text-lg bg-base-100 z-20">
                 <li><Link to={"/MeusCursos"}>Cursos Comprados</Link></li>
                 <li><Link to={"/EventCalendar"}>Meu calendário</Link></li>
               </ul>
@@ -80,7 +80,7 @@ function Navbar() {
             )}
           </label>
           {notificationOn && (
-            <ul tabIndex={0} className="mt-3 lili p-2 h-auto shadow-lg menu dropdown-content bg-base-100 rounded-box w-96">
+            <ul tabIndex={0} className="mt-3 bg-base-100 p-2 h-auto shadow-lg menu dropdown-content bg-base-100 rounded-box w-96">
               {userType === 'teacher' && (
                 <>
                   {notifications.map(notification => (
@@ -108,7 +108,7 @@ function Navbar() {
           </div>
         </label>
         {avatarOn && (
-          <ul tabIndex={0} className="mt-3 lili p-2 shadow-lg menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+          <ul tabIndex={0} className="mt-3 p-2 shadow-lg menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
             <li>
               <Link to="#" className="justify-between" onClick={handleUserChange}
               >{userType === 'student' ? 'Trocar para professor' : 'Trocar para aluno'}
