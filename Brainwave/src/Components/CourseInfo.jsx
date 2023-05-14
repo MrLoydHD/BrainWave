@@ -21,6 +21,7 @@ function CourseInfo({ course, error, isPending}) {
         var numReviews = course.numReviews;
         var videoDefault = course.videoDefault;
         var videos = course.videos;
+        var medium_description = course.medium_description;
 
         setShowAlert(true);
 
@@ -28,7 +29,7 @@ function CourseInfo({ course, error, isPending}) {
             setShowAlert(false);
         }, 3000); // 5000 milisegundos = 5 segundos
 
-        const course1 = { id, name, image, subject, prof, description, price, rating, subject, discount, numVideos, numReviews, videoDefault, videos};
+        const course1 = { id, name, image, subject, prof, description, price, rating, subject, discount, numVideos, numReviews, videoDefault, videos, medium_description};
     
         fetch('http://localhost:3000/myCourses', {
           method: 'POST',
@@ -53,7 +54,7 @@ function CourseInfo({ course, error, isPending}) {
                             <h1 className="text-3xl font-bold">{ course.name }</h1>
                             <h2 className="text-2xl font-bold bg-green-500 rounded-full px-3 py-1" type="text" value={ course.price }>{ course.price }€/mês</h2>
                         </div>
-                        <img className="w-full h-96 object-cover mb-4" src="https://via.placeholder.com/800x400" alt="Imagem do Curso" />
+                        <img className="w-full h-128 object-cover mb-4" src={course.image} alt="Imagem do Curso" />
                         <div className="flex justify-between items-center mb-4 pb-14">
                             <h3 className="text-xl font-bold">Disciplina: { course.subject }</h3>
                             <h3 className="text-xl font-bold">Nº de vídeos: { course.numVideos }</h3>
