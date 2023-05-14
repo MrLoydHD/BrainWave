@@ -16,7 +16,7 @@ function App() {
         <Route path="/TodosCursos/:id" Component={Course} />
         <Route path="/MeusCursos" Component={MeusCursos}></Route>
         <Route path="/EventCalendar" Component={EventCalendar}></Route>
-        <Route path="/MeuCursoVideos/:id" Component={MeuCursoVideos}></Route>
+        <Route path="/MeuCursoVideos/:courseId/:videoId" Component={MeuCursoVideos}></Route>
 			</Routes>
 		</BrowserRouter>
   )

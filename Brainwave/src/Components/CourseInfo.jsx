@@ -17,6 +17,10 @@ function CourseInfo({ course, error, isPending}) {
         var rating = course.rating;
         var subject = course.subject;
         var discount = course.discount;
+        var numVideos = course.numVideos;
+        var numReviews = course.numReviews;
+        var videoDefault = course.videoDefault;
+        var videos = course.videos;
 
         setShowAlert(true);
 
@@ -24,7 +28,7 @@ function CourseInfo({ course, error, isPending}) {
             setShowAlert(false);
         }, 5000); // 5000 milisegundos = 5 segundos
 
-        const course1 = { id, name, image, subject, prof, description, price, rating, subject, discount };
+        const course1 = { id, name, image, subject, prof, description, price, rating, subject, discount, numVideos, numReviews, videoDefault, videos};
     
         fetch('http://localhost:3000/myCourses', {
           method: 'POST',

@@ -10,7 +10,7 @@ function HomeCarousel({isPending, courses}) {
                 <><div className="px-3 flex justify-center w-1/4">
                     <div className="card w-full bg-base-100">
                         <div className="card-body">
-                            <img className="w-full h-40 object-cover" src={course.image} alt={"title"} />
+                            <img className="w-full h-50 object-cover" src={course.image} alt={"title"} />
                             <div className="flex justify-between items-center">
                                 <h1 className="card-title font-bold mb-2 flex-grow p-2">{course.name}</h1>
                                 <div className="bg-green-500 text-white text-sm rounded-full px-3 py-1 max-h-8">{course.price}€</div>

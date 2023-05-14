@@ -4,10 +4,11 @@ import useFetch from '../Hooks/useFetch';
 import { useState } from 'react';
 import ReactPlayer from 'react-player'
 import image from '../Images/novoutilizador.jpg';
+import { Link } from 'react-router-dom';
 
 function MeuCursoVideos() {
-    const { id } = useParams();
-    const { data: course, error, isPending } = useFetch('http://localhost:3000/courses/' + id);
+    const { courseId, videoId } = useParams();
+    const { data: course, error, isPending } = useFetch('http://localhost:3000/courses/' + courseId);
     const [showReplyBox, setShowReplyBox] = useState(false);
     const [submitReply, setSubmitReply] = useState(null);
     const [replyContent, setReplyContent] = useState('');
@@ -18,14 +19,6 @@ function MeuCursoVideos() {
     const [disabledButton2, setDisabledButton2] = useState(false);
     const [commentContent, setCommentContent] = useState('');
     const [submitComment, setSubmitComment] = useState(false);
-
-
-    // Mocked video list
-    const videoList = [
-        { id: 1, title: 'Video 1', url: 'http://video1.com' },
-        { id: 2, title: 'Video 2', url: 'http://video2.com' },
-        //...
-    ];
 
     // Mocked comments
     const commentList = [
@@ -71,7 +64,8 @@ function MeuCursoVideos() {
                         <h1 className="text-3xl font-bold">{ course.name }</h1>
                         <div className='pt-5 w-full' style={{ height: '68.5vh' }}>
                             <ReactPlayer 
-                                url='https://www.youtube.com/watch?v=ysz5S6PUM-U' 
+                                key={videoId}
+                                url={course.videoDefault}
                                 controls="true"
                                 width='100%'
                                 height='100%'
@@ -80,8 +74,12 @@ function MeuCursoVideos() {
                     </div>
 
                     <div className="w-full flex-grow">
-                        <h1 className="text-3xl font-bold pb-7">Inserir o nome do video aqui</h1>
-                        <h3 className="text-3xl font-bold mb-2">Comentários:</h3>
+                        {course.videos.map((video) => (
+                            video.id === Number(videoId) && (
+                                <h1 className="text-3xl font-bold pb-7">{video.name}</h1>
+                            )
+                        ))}
+                        <h3 className="text-3xl font-bold mb-2 pb-3">Comentários:</h3>
                             {(!submitComment) && <div className="mb-4 bg-white shadow rounded-lg overflow-hidden">
                                 <div className="p-4">
                                     <textarea placeholder="Escreve um comentário" value={commentContent} className="w-full p-2 border border-gray-300 rounded" onChange={(e) => setCommentContent(e.target.value)}></textarea>
@@ -181,16 +179,18 @@ function MeuCursoVideos() {
 
                 <div className="w-32 md:w-5/12 pl-6 pt-16">
                     <h3 className="text-xl font-bold mb-2">Lista de vídeos</h3>
-                    {videoList.map(video => (
-                        <div key={video.id} className="card lg:card-side mb-4 bg-white shadow rounded-lg overflow-hidden cursor-pointer hover:bg-gray-200 p-2" onClick={() => handleVideoSelect(video)}>
-                            <figure><img className="h-16 w-22" src="https://est.ipca.pt/wp-content/uploads/sites/4/2017/11/1.jpg" alt="Movie"/></figure>
-                            <div className="p-4 flex flex-row items-center gap-2">
-                                <div>
-                                    <h4 className="text-lg font-bold mb-2">{video.title}</h4>
-                                    <p className="text-gray-700">Duração: {video.duration}</p>
+                    {course.videos.map(video => (
+                        <Link key={video.id} to={`/MeuCursoVideos/${course.id}/${video.id}`}>
+                            <div key={video.id} className={`card lg:card-side mb-4 bg-white shadow rounded-lg overflow-hidden cursor-pointer ${Number(videoId) === video.id ? 'bg-gray-400' : ''} p-2`} onClick={() => handleVideoSelect(video)}>
+                                <figure><img className="h-16 w-22" src={course.image} alt="Movie"/></figure>
+                                <div className="p-4 flex flex-row items-center gap-2">
+                                    <div>
+                                        <h4 className="text-lg font-bold mb-2">{video.name}</h4>
+                                        <span className="badge">{video.duração}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

@@ -2,22 +2,9 @@
   "courses": [
     {
       "id": 1,
-      "name": "Introdução à Programação",
-      "image": "https://via.placeholder.com/800x400",
-      "prof": "Pedro Silva",
-      "description": "Aprenda as bases da programação em linguagem C.",
-      "price": 90,
-      "rating": 4.2,
-      "subject": "Informática",
-      "discount": 0.2,
-      "numVideos": 6,
-      "numReviews": 23
-    },
-    {
-      "id": 2,
       "name": "Funções Trigonométricas",
-      "image": "https://via.placeholder.com/800x400",
-      "prof": "Ana Santos",
+      "image": "https://i.ytimg.com/vi/ECsEcrVKG5k/maxresdefault.jpg",
+      "prof": "João Pontes",
       "description": "Aprenda a calcular funções trigonométricas e suas aplicações práticas.",
       "price": 120,
       "rating": 4.8,
@@ -25,129 +12,52 @@
       "discount": 0.15,
       "numVideos": 8,
       "numReviews": 29,
+      "videoDefault": "https://www.youtube.com/watch?v=ECsEcrVKG5k",
       "videos": [
         {
           "id": 1,
           "name": "Introdução",
-          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+          "duração": "12:23"
         },
         {
           "id": 2,
           "name": "Seno",
-          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+          "duração": "9:34"
         },
         {
           "id": 3,
           "name": "Cosseno",
-          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+          "duração": "8:45"
         },
         {
           "id": 4,
           "name": "Tangente",
-          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+          "duração": "10:12"
         },
         {
           "id": 5,
           "name": "Cotangente",
-          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+          "duração": "11:23"
         },
         {
           "id": 6,
           "name": "Secante",
-          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+          "duração": "9:10"
         },
         {
           "id": 7,
           "name": "Cossecante",
-          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+          "duração": "10:23"
         },
         {
           "id": 8,
           "name": "Exercícios",
-          "url": "https://www.youtube.com/embed/1q7g5iYJUuA"
+          "duração": "15:32"
         }
       ]
     },
     {
-      "id": 3,
-      "name": "Fotografia Profissional",
-      "image": "https://via.placeholder.com/800x400",
-      "prof": "Miguel Pereira",
-      "description": "Aprenda a tirar fotos profissionais utilizando técnicas de iluminação e composição.",
-      "price": 150,
-      "rating": 3.5,
-      "subject": "Fotografia",
-      "discount": 0.1,
-      "numVideos": 10,
-      "numReviews": 32
-    },
-    {
-      "id": 4,
-      "name": "Inglês para Negócios",
-      "image": "https://via.placeholder.com/800x400",
-      "prof": "Sarah Johnson",
-      "description": "Aprenda a se comunicar em inglês em situações de negócios.",
-      "price": 80,
-      "rating": 4,
-      "subject": "Idiomas",
-      "discount": 0.3,
-      "numVideos": 7,
-      "numReviews": 20
-    },
-    {
-      "id": 5,
-      "name": "Artesanato em Madeira",
-      "image": "https://via.placeholder.com/800x400",
-      "prof": "Joaquim Silva",
-      "description": "Aprenda a criar peças de artesanato em madeira utilizando técnicas tradicionais.",
-      "price": 200,
-      "rating": 4.9,
-      "subject": "Artesanato",
-      "discount": 0.05,
-      "numVideos": 4,
-      "numReviews": 38
-    },
-    {
-      "id": 6,
-      "name": "Introdução à Psicologia",
-      "image": "https://via.placeholder.com/800x400",
-      "prof": "Carla Vieira",
-      "description": "Aprenda os conceitos básicos da psicologia e suas aplicações práticas.",
-      "price": 100,
-      "rating": 4.5,
-      "subject": "Psicologia",
-      "discount": 0.2,
-      "numVideos": 5,
-      "numReviews": 26
-    },
-    {
-      "id": 7,
-      "name": "Negociação e Persuasão",
-      "image": "https://via.placeholder.com/800x400",
-      "prof": "Ricardo Santos",
-      "description": "Aprenda técnicas de negociação e persuasão para obter melhores resultados em suas negociações.",
-      "price": 80,
-      "rating": 2.9,
-      "subject": "Negócios",
-      "discount": 0.25,
-      "numVideos": 9,
-      "numReviews": 28
-    },
-    {
-      "id": 8,
-      "name": "Aprenda a Cozinhar",
-      "image": "https://via.placeholder.com/800x400",
-      "prof": "Luís Mendes",
-      "description": "Aprenda a cozinhar pratos deliciosos e saudáveis em casa.",
-      "price": 100,
-      "rating": 4.3,
-      "subject": "Culinária",
-      "discount": 0.2,
-      "numVideos": 8,
-      "numReviews": 31
-    },
-    {
-      "id": 9,
+      "id": 2,
       "name": "Geometria para o Amor",
       "image": "https://via.placeholder.com/800x400",
       "prof": "Ana Santos",
@@ -157,44 +67,118 @@
       "subject": "Matemática",
       "discount": 0.15,
       "numVideos": 10,
-      "numReviews": 24
-    },
-    {
-      "id": 10,
-      "name": "Desenvolvimento Web Avançado",
-      "image": "https://via.placeholder.com/800x400",
-      "prof": "Maria Sousa",
-      "description": "Aprofunde seus conhecimentos em desenvolvimento web com HTML, CSS e JavaScript.",
-      "price": 120,
-      "rating": 3.9,
-      "subject": "Informática",
-      "discount": 0.1,
-      "numVideos": 6,
-      "numReviews": 15
+      "numReviews": 24,
+      "videoDefault": "https://www.youtube.com/watch?v=ECsEcrVKG5k",
+      "videos": [
+        {
+          "id": 1,
+          "name": "Introdução",
+          "duração": "12:23"
+        },
+        {
+          "id": 2,
+          "name": "Seno",
+          "duração": "9:34"
+        },
+        {
+          "id": 3,
+          "name": "Cosseno",
+          "duração": "8:45"
+        },
+        {
+          "id": 4,
+          "name": "Tangente",
+          "duração": "10:12"
+        },
+        {
+          "id": 5,
+          "name": "Cotangente",
+          "duração": "11:23"
+        },
+        {
+          "id": 6,
+          "name": "Secante",
+          "duração": "9:10"
+        },
+        {
+          "id": 7,
+          "name": "Cossecante",
+          "duração": "10:23"
+        },
+        {
+          "id": 8,
+          "name": "Exercícios",
+          "duração": "15:32"
+        },
+        {
+          "id": 9,
+          "name": "Exercícios",
+          "duração": "15:32"
+        },
+        {
+          "id": 10,
+          "name": "Exercícios",
+          "duração": "15:32"
+        }
+      ]
     }
   ],
   "myCourses": [
     {
       "id": 1,
-      "name": "Introdução à Programação",
+      "name": "Funções Trigonométricas",
       "image": "https://via.placeholder.com/800x400",
-      "subject": "Informática",
-      "prof": "Pedro Silva",
-      "description": "Aprenda as bases da programação em linguagem C.",
-      "price": 90,
-      "rating": 4.2,
-      "discount": 0.2
-    },
-    {
-      "id": 10,
-      "name": "Desenvolvimento Web Avançado",
-      "image": "https://via.placeholder.com/800x400",
-      "subject": "Informática",
-      "prof": "Maria Sousa",
-      "description": "Aprofunde seus conhecimentos em desenvolvimento web com HTML, CSS e JavaScript.",
+      "subject": "Matemática",
+      "prof": "João Pontes",
+      "description": "Aprenda a calcular funções trigonométricas e suas aplicações práticas.",
       "price": 120,
-      "rating": 3.9,
-      "discount": 0.1
+      "rating": 4.8,
+      "discount": 0.15,
+      "numVideos": 8,
+      "numReviews": 29,
+      "videoDefault": "https://www.youtube.com/watch?v=ECsEcrVKG5k",
+      "videos": [
+        {
+          "id": 1,
+          "name": "Introdução",
+          "duração": "12:23"
+        },
+        {
+          "id": 2,
+          "name": "Seno",
+          "duração": "9:34"
+        },
+        {
+          "id": 3,
+          "name": "Cosseno",
+          "duração": "8:45"
+        },
+        {
+          "id": 4,
+          "name": "Tangente",
+          "duração": "10:12"
+        },
+        {
+          "id": 5,
+          "name": "Cotangente",
+          "duração": "11:23"
+        },
+        {
+          "id": 6,
+          "name": "Secante",
+          "duração": "9:10"
+        },
+        {
+          "id": 7,
+          "name": "Cossecante",
+          "duração": "10:23"
+        },
+        {
+          "id": 8,
+          "name": "Exercícios",
+          "duração": "15:32"
+        }
+      ]
     }
   ]
 }

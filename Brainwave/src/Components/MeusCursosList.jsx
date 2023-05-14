@@ -4,7 +4,8 @@ const MeusCoursosList = ({ courses }) => {
   return (
     <div>
         {courses.map(course => (
-            <Link to={`/MeuCursoVideos/${course.id}`}>
+            course.videos && course.videos.length > 0 && 
+                <Link key={course.id} to={`/MeuCursoVideos/${course.id}/${course.videos[0].id}`}>
                 <div className="bg-white border border-gray-300 rounded-lg shadow-md flex h-48 w-[1000px] relative mb-5 hover:shadow-xl transform hover:scale-105 transition duration-500">
                     <div className="w-1/2 bg-cover bg-center" style={{ backgroundImage: `url(${course.image})` }}></div>
                     <div className="flex-1 flex flex-col justify-between p-4">
