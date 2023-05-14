@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 
 function HomeSearch({ isPending, courses}) {
   const [searchTerm, setSearchTerm] = useState("");
+  const subjects = courses.map((course) => course.subject);
+  const titles = courses.map((course) => course.name);
+  const options = [...new Set(subjects), ...new Set(titles)];
 
   return (
     //CUIDADO COM ESTE ABSOLUTE

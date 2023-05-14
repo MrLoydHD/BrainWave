@@ -9,7 +9,7 @@ function Course() {
   const { data: course, error, isPending } = useFetch('http://localhost:3000/courses/' + id);
 
   return (
-    <div className='bg-gray-200 min-h-screen'>
+    <div className='lili min-h-screen'>
         <header>
             <Navbar></Navbar>
         </header> 

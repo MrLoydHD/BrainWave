@@ -12,10 +12,14 @@ function TodosCursos() {
     const [choice, setChoice] = useState("");
     const [valorSlider, setValorSlider] = useState(200);
     const [selectedRadio, setSelectedRadio] = useState('');
-
+    const [unreapeatedSubjects, setUnreapeatedSubjects] = useState([]);
     // atualiza o estado filteredCourses com o valor de courses
     useEffect(() => {
         setFilteredCourses(courses);
+        setTimeout(() => {
+            setUnreapeatedSubjects([...new Set(courses.map(course => course.subject))]);
+
+        }, 2000);
     }, [courses]);
 
     // atualiza o estado choice com o valor do dropdown
@@ -75,7 +79,7 @@ function TodosCursos() {
     }
 
     return (
-        <div className='bg-TeaGreen min-h-screen'>
+        <div className='lili min-h-screen'>
             <header>
                 <Navbar></Navbar>
             </header> 
@@ -93,8 +97,8 @@ function TodosCursos() {
                                 <h3 htmlFor="disciplina" className="text-xl font-bold mb-4">Disciplina:</h3>
                                 <select id="disciplina" name="disciplina" className="select select-bordered w-2/3" onChange={handleDrop}>
                                 <option value="">Todas as disciplinas</option>
-                                {!isPending && courses.map(course => (
-                                    <option key={course.id} value={course.subject}>{course.subject}</option>
+                                {!isPending && unreapeatedSubjects.map(subject => (
+                                    <option value={subject}>{subject}</option>
                                 ))}
                                 {console.log(choice)}
                                 </select>

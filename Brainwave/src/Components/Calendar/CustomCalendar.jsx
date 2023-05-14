@@ -5,7 +5,11 @@ import { useState, useCallback} from 'react';
 import events from './events';
 
 export default function CustomCalendar() {
-    const [myEvents, setEvents] = useState(events);
+
+
+    // Para recuperar os eventos do localStorage
+    const savedEvents = JSON.parse(localStorage.getItem('myEvents')) || events;
+    const [myEvents, setEvents] = useState(savedEvents);
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedDates, setSelectedDates] = useState({ start: new Date(), end: new Date() });
     const [title, setTitle] = useState("");
@@ -20,6 +24,7 @@ export default function CustomCalendar() {
     const [toastMessage, setToastMessage] = useState("");
     const [dicas, setDicas] = useState(false);
 
+    localStorage.setItem('myEvents', JSON.stringify(myEvents));
 
     const allFieldFilled = () => {
         return title && discipline && tasks;
@@ -204,18 +209,22 @@ export default function CustomCalendar() {
         </div>
         )}
         {isSaved && (
-                <div className='toast mt-16 toast-top toast-end'>
+            <div className='fixed top-0 right-0 p-6'>
+                <div className='toast toast-top toast-end'>
                     <div className='alert alert-success'>
                         <p>Evento criado com sucesso</p>
                     </div>
                 </div>
+            </div>
         )}
         {disable && (
-                <div className='toast mt-16 toast-top toast-end'>
+            <div className='fixed top-0 right-0 p-6'>
+                <div className='toast toast-top toast-end'>
                     <div className='alert alert-warning'>
                         <p>Preencha todos os campos</p>
                     </div>
                 </div>
+            </div>
         )}
         {selectedEvent && <div className="fixed z-10 inset-0 left-2/3 overflow-x-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
                 <div className="flex items-end justify-center min-h-screen pt-4 px-5 pb-20 text-center sm:block sm:p-0">
@@ -336,9 +345,11 @@ export default function CustomCalendar() {
                 </div>
             </div>}
             {isEdited && (
-                <div className='toast mt-16 toast-top toast-end'>
-                    <div className='alert alert-success'>
-                        <p>Evento editado com sucesso</p>
+                <div className='fixed top-0 right-0 p-6'>
+                    <div className='toast toast-top toast-end'>
+                        <div className='alert alert-success'>
+                            <p>Evento editado com sucesso</p>
+                        </div>
                     </div>
                 </div>
             )}
@@ -397,20 +408,22 @@ export default function CustomCalendar() {
                     </div>
                 </div>
             )}
-            <div className="flex mr-4 justify-end gap-2">
-                {dicas && (
-                    <div className="text-block ml-4 bg-green-200 font-bold rounded shadow-lg">
-                        <p>Dica- Clica no dia para marcares um evento</p>
-                        <p>Dica- Para marcar vários dias arrastar no Calendário </p>
-                        <p>Dica- Clica no evento para ver/editar</p>
-                    </div>
-                )}
-                <button
-                    className="w-10 h-10 rounded-full flex font-bold text-xl items-center justify-center bg-green-300 shadow-lg"
-                    onClick={() => setDicas(!dicas)}
-                >
-                    ?
-                </button>
+            <div className='relative'>
+                <div className="absolute bottom-128 right-0 flex mr-4 justify-end gap-2">
+                    {dicas && (
+                        <div className="text-block ml-4 bg-green-200 font-bold rounded shadow-lg">
+                            <p>Dica- Clica no dia para marcares um evento</p>
+                            <p>Dica- Para marcar vários dias arrastar no Calendário </p>
+                            <p>Dica- Clica no evento para ver/editar</p>
+                        </div>
+                    )}
+                    <button
+                        className="w-10 h-10 rounded-full flex font-bold text-xl items-center justify-center bg-green-300 shadow-lg"
+                        onClick={() => setDicas(!dicas)}
+                    >
+                        ?
+                    </button>
+                </div>
             </div>
     </div>
   );
