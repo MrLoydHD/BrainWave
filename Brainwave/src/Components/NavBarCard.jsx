@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Card({ name, comment }) {
   return (
-    <>
+    <div className='lili'>
         <Link to={"/MeuCursoVideos/1/1"}>
             <div className="flex items-center space-x-4 p-2 bg-white shadow-sm rounded-md">
             <img className="w-10 h-10 object-cover rounded-full" src={image} alt={name} />
@@ -16,7 +16,7 @@ function Card({ name, comment }) {
             <img className="w-16 h-9" src={image} alt="Content preview" />
             </div>
         </Link>
-    </>
+    </div>
   );
 }
 

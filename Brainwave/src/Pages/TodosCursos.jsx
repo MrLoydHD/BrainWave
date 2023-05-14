@@ -87,13 +87,13 @@ function TodosCursos() {
                 <div className='flex justify-center items-center mt-10'>
                     {!isPending && <Search courses={courses}></Search>}
                 </div>
-                <div className='flex w-full mt-10'>
-                    <div className='w-1/4 ml-4'>
-                        <div className='flex justify-center shadow-md'>
+                <div className='flex w-full items-center mt-10'>
+                    <div className='w-1/4 ml-32 p-10 border shadow-lg'>
+                        <div className='flex justify-center'>
                             <h2 className="text-2xl font-bold mb-4">Filtros</h2>
                         </div>
                         <div>
-                            <div className="items-center mb-10 mt-4">
+                            <div className="mb-10 mt-4">
                                 <h3 htmlFor="disciplina" className="text-xl font-bold mb-4">Disciplina:</h3>
                                 <select id="disciplina" name="disciplina" className="select select-bordered w-2/3" onChange={handleDrop}>
                                 <option value="">Todas as disciplinas</option>
