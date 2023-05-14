@@ -2,7 +2,7 @@ import Navbar from '../Components/Navbar'
 import Search from '../Components/TodosCursosSearch'
 import Courses from '../Components/TodosCursosCourses'
 import useFetch from '../Hooks/useFetch';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
@@ -13,6 +13,9 @@ function TodosCursos() {
     const [valorSlider, setValorSlider] = useState(200);
     const [selectedRadio, setSelectedRadio] = useState('');
     const [unreapeatedSubjects, setUnreapeatedSubjects] = useState([]);
+    const selectRef = useRef(null);
+    const [selectedFormControl, setSelectedFormControl] = useState(null);
+
     // atualiza o estado filteredCourses com o valor de courses
     useEffect(() => {
         setFilteredCourses(courses);
@@ -35,6 +38,7 @@ function TodosCursos() {
     // atualiza o estado selectedRadio com o valor do radio button
     const handleRadioChange = (event) => {
         setSelectedRadio(event.target.id);
+        setSelectedFormControl(event.target);
       };
 
     const filterResults = () => {
@@ -72,10 +76,18 @@ function TodosCursos() {
     }
 
     const resetFilters = () => {
-        setChoice("");
+        // Volta o select para a opção padrão
+        selectRef.current.value = '';
+        
+        // Redefine o estado dos outros campos
+        setChoice('');
         setValorSlider(200);
         setSelectedRadio('');
         setFilteredCourses(courses);
+
+        if (selectedFormControl) {
+            selectedFormControl.checked = false;
+          }
     }
 
     return (
@@ -88,14 +100,14 @@ function TodosCursos() {
                     {!isPending && <Search courses={courses}></Search>}
                 </div>
                 <div className='flex w-full items-center mt-10'>
-                    <div className='w-1/4 ml-32 p-10 border shadow-lg'>
+                    <div className='w-1/4 ml-32 p-10 border bg-white rounded-lg shadow-lg'>
                         <div className='flex justify-center'>
                             <h2 className="text-2xl font-bold mb-4">Filtros</h2>
                         </div>
                         <div>
                             <div className="mb-10 mt-4">
                                 <h3 htmlFor="disciplina" className="text-xl font-bold mb-4">Disciplina:</h3>
-                                <select id="disciplina" name="disciplina" className="select select-bordered w-2/3" onChange={handleDrop}>
+                                <select id="disciplina" name="disciplina" className="select select-bordered w-2/3" onChange={handleDrop} ref={selectRef}>
                                 <option value="">Todas as disciplinas</option>
                                 {!isPending && unreapeatedSubjects.map(subject => (
                                     <option value={subject}>{subject}</option>

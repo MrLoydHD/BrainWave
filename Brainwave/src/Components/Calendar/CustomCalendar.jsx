@@ -418,7 +418,7 @@ export default function CustomCalendar() {
                         </div>
                     )}
                     <button
-                        className="w-10 h-10 rounded-full flex font-bold text-xl items-center justify-center bg-green-300 shadow-lg"
+                        className="w-10 h-10 rounded-full font-bold text-xl bg-green-300 shadow-lg"
                         onClick={() => setDicas(!dicas)}
                     >
                         ?

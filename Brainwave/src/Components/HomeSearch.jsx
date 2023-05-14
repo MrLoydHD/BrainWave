@@ -13,7 +13,7 @@ function HomeSearch({ isPending, courses}) {
         <h1 className="text-7xl text-white font-bold p-4 text-center">Pesquisar Curso</h1>
       </div>
       <div className="relative">
-        <div className="rounded-lg shadow-xl flex items-center w-full bg-white">
+        <div className="rounded-lg shadow-lg flex items-center w-full bg-white">
           <input 
             type="text" 
             placeholder="Pesquisa aqui..." 
