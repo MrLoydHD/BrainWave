@@ -99,7 +99,7 @@ function TodosCursos() {
                 <div className='flex justify-center items-center mt-10'>
                     {!isPending && <Search courses={courses}></Search>}
                 </div>
-                <div className='flex w-full items-center mt-10'>
+                <div className='flex w-full items-start mt-10'>
                     <div className='w-1/4 ml-32 p-10 border bg-white rounded-lg shadow-lg'>
                         <div className='flex justify-center'>
                             <h2 className="text-2xl font-bold mb-4">Filtros</h2>
