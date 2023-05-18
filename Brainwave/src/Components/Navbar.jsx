@@ -40,23 +40,14 @@ function Navbar() {
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal text-xl px-1 mr-4">
-          <li tabIndex={0} className='z-20'>
-              <Link to="#">
-                Cursos
-                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-              </Link>
-              <ul className="p-2 bg-base-100 text-lg shadow-lg bg-base-100">
-                <li><Link to="#">Para ti</Link></li>
-                <li><Link to={"/TodosCursos"}>Todos cursos</Link></li>
-              </ul>
-          </li>
+          <li><Link to={"/TodosCursos"}>Todos Os Cursos</Link></li>
           {userType === 'teacher' && <li><Link to="#">Espaço do Professor</Link></li>}
           <li tabIndex={0}>
               <Link to="#">
                 Meu Espaço
                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
               </Link>
-              <ul className="p-2 bg-base-100 shadow-lg text-lg bg-base-100 z-20">
+              <ul className="p-2 bg-base-100 shadow-lg text-lg z-20">
                 <li><Link to={"/MeusCursos"}>Cursos Comprados</Link></li>
                 <li><Link to={"/EventCalendar"}>Meu calendário</Link></li>
               </ul>

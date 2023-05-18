@@ -1,14 +1,20 @@
 import Navbar from '../Components/Navbar'
 import { useParams } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import ReactPlayer from 'react-player'
 import image from '../Images/novoutilizador.jpg';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../Contexts/UserContext';
 
 function MeuCursoVideos() {
     const { courseId, videoId } = useParams();
     const { data: course, error, isPending } = useFetch('http://localhost:3000/courses/' + courseId);
+    
+    const {userType, setUserType} = useContext(UserContext);
+    const [user, setUser] = useState(null);
+
+    // comment section variables (sim está um caos)
     const [showReplyBox, setShowReplyBox] = useState(false);
     const [submitReply, setSubmitReply] = useState(null);
     const [replyContent, setReplyContent] = useState('');
@@ -26,6 +32,18 @@ function MeuCursoVideos() {
         { id: 2, user: 'Carlos Alberto', comment: 'Gostei do video, bastante claro e explicativo' },
         //...
     ];
+
+    useEffect(() => {
+        if(userType === 'student' && course) {
+            setUser("Estudante Guest");
+        } 
+        else if (userType === 'teacher' && course) {
+            setUser("Professor " + course.prof);
+        }
+    }, [userType, course]);
+    
+        
+
 
     const handleReply = (id) => {
         setShowReplyBox(!showReplyBox);
@@ -93,12 +111,13 @@ function MeuCursoVideos() {
                                     <div className="p-4">
                                         <div className='flex flex-row items-center pb-6'>
                                             <img className="w-12 h-12 object-cover rounded-full mr-4" src={image} alt="Imagem de aluno" />
-                                            <h4 className="text-lg font-bold mb-2">Mano bro</h4>
+                                            <h4 className="text-lg font-bold mb-2">{user}</h4>
                                         </div>
                                         <p className="text-gray-700">{commentContent}</p>
                                     </div>
                                     <div className="px-4 py-2 bg-gray-100 border-t border-gray-200">
                                         <button className="text-green-600 hover:text-green-900  text-sm font-semibold">Responder</button>
+                                        <button className="px-2 text-green-600 hover:text-green-900  text-sm font-semibold" onClick={() => (setSubmitComment(false), setCommentContent(""))}>Remover</button>
                                     </div>
                                 </div>
                             }
@@ -129,12 +148,13 @@ function MeuCursoVideos() {
                                     <div className="p-4">
                                         <div className='flex flex-row items-center pb-6'>
                                             <img className="w-12 h-12 object-cover rounded-full mr-4" src={image} alt="Imagem de aluno" />
-                                            <h4 className="text-lg font-bold mb-2">Mano bro</h4>
+                                            <h4 className="text-lg font-bold mb-2">{user}</h4>
                                         </div>
                                         <p className="text-gray-700">{replyContent}</p>
                                     </div>
                                     <div className="px-4 py-2 bg-gray-100 border-t border-gray-200">
                                         <button className="text-green-600 hover:text-green-900  text-sm font-semibold">Responder</button>
+                                        <button className="px-2 text-green-600 hover:text-green-900  text-sm font-semibold" onClick={() => setSubmitReply(false)}>Remover</button>
                                     </div>
                                 </div>
                             }
@@ -171,6 +191,7 @@ function MeuCursoVideos() {
                                     </div>
                                     <div className="px-4 py-2 bg-gray-100 border-t border-gray-200">
                                         <button className="text-green-600 hover:text-green-900  text-sm font-semibold">Responder</button>
+                                        <button className="px-2 text-green-600 hover:text-green-900  text-sm font-semibold" onClick={() => setSubmitReply2(false)}>Remover</button>
                                     </div>
                                 </div>
                             }
@@ -181,7 +202,7 @@ function MeuCursoVideos() {
                     <h3 className="text-xl font-bold mb-2">Lista de vídeos</h3>
                     {course.videos.map(video => (
                         <Link key={video.id} to={`/MeuCursoVideos/${course.id}/${video.id}`}>
-                            <div key={video.id} className={`card lg:card-side mb-4 bg-white shadow rounded-lg overflow-hidden cursor-pointer ${Number(videoId) === video.id ? 'bg-cyan-100' : ''} p-2`} onClick={() => handleVideoSelect(video)}>
+                            <div key={video.id} className={`card lg:card-side mb-4 bg-white shadow rounded-lg overflow-hidden cursor-pointer ${Number(videoId) === video.id ? 'bg-cyan-100' : 'bg-white'} p-2`} onClick={() => handleVideoSelect(video)}>
                                 <figure><img className="h-16 w-22" src={course.image} alt="Movie"/></figure>
                                 <div className="p-4 flex flex-row items-center gap-2">
                                     <div>
