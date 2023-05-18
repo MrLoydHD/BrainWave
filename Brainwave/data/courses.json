@@ -300,128 +300,51 @@
   "myCourses": [
     {},
     {
-      "id": 1,
-      "name": "Funções Trigonométricas",
-      "image": "https://i.ytimg.com/vi/ECsEcrVKG5k/maxresdefault.jpg",
-      "subject": "Matemática",
-      "prof": "João Pontes",
-      "description": "Olá! Sou o João Pontes, professor do curso 'Funções Trigonométricas'. Este curso de matemática destina-se a todos que desejam aprender ou aprofundar seus conhecimentos em trigonometria. Com um total de 8 vídeos, cada um dedicado a um tema específico, este curso tem como objetivo ajudá-lo a entender e calcular as funções trigonométricas e suas aplicações práticas. Começamos com uma 'Introdução' ao curso e aos conceitos básicos de trigonometria. Este vídeo tem uma duração de 12 minutos e 23 segundos. Em seguida, temos vídeos dedicados a cada uma das funções trigonométricas, começando com o 'Seno', que tem uma duração de 9 minutos e 34 segundos. O próximo vídeo é sobre o 'Cosseno', com duração de 8 minutos e 45 segundos. A 'Tangente' é o próximo tópico, que explicarei em 10 minutos e 12 segundos. Continuamos com 'Cotangente', 'Secante' e 'Cossecante', que são um pouco mais avançados, mas não se preocupe, explico cada um deles em detalhes em vídeos de 11 minutos e 23 segundos, 9 minutos e 10 segundos e 10 minutos e 23 segundos, respectivamente. O curso termina com um vídeo de 'Exercícios', que tem uma duração de 15 minutos e 32 segundos, onde vamos colocar em prática tudo o que aprendemos durante o curso. Este curso tem uma classificação de 4.8, com base em 29 avaliações. O preço normal é de 120 euros, mas atualmente estamos oferecendo um desconto de 15%, então não perca esta oportunidade! Estou ansioso para compartilhar todo o meu conhecimento sobre funções trigonométricas com você. Vamos começar esta jornada juntos!",
-      "price": 120,
-      "rating": 4.8,
-      "discount": 0.15,
-      "numVideos": 8,
-      "numReviews": 29,
-      "videoDefault": "https://www.youtube.com/watch?v=ECsEcrVKG5k",
+      "id": 3,
+      "name": "Leis de Newton",
+      "image": "https://i.ytimg.com/vi/B2u8FYE9fWk/maxresdefault.jpg",
+      "subject": "Física e Química",
+      "prof": "Francisco Teixeira",
+      "description": "Olá! Sou a Francisco Teixeira, professora do curso 'Leis de Newton'. Este curso de física é dedicado a todos os que desejam aprender ou aprofundar seus conhecimentos sobre as leis de movimento de Newton. Com um total de 6 vídeos, cada um focado numa lei ou conceito específico, este curso tem como objetivo ajudá-lo a entender e aplicar as leis de Newton e suas implicações práticas. Começamos com uma 'Introdução' ao curso e aos conceitos básicos da física newtoniana. O resto dos vídeos são dedicados a cada uma das 'Três Leis de Newton', à 'Lei da Gravitação Universal', e finalmente, um vídeo de 'Exercícios' para colocar em prática tudo o que aprendemos. Este curso tem uma classificação de 3.8, com base em 45 avaliações. O preço normal é de 90 euros, mas atualmente estamos oferecendo um desconto de 10%, então não perca esta oportunidade! Estou ansiosa para compartilhar todo o meu conhecimento sobre as leis de Newton com você. Vamos começar esta jornada juntos!",
+      "price": 90,
+      "rating": 3.8,
+      "discount": 0.1,
+      "numVideos": 6,
+      "numReviews": 45,
+      "videoDefault": "https://www.youtube.com/watch?v=B2u8FYE9fWk",
       "videos": [
         {
           "id": 1,
           "name": "Introdução",
-          "duração": "12:23"
+          "duração": "12:30"
         },
         {
           "id": 2,
-          "name": "Seno",
-          "duração": "9:34"
+          "name": "Primeira Lei de Newton",
+          "duração": "10:20"
         },
         {
           "id": 3,
-          "name": "Cosseno",
-          "duração": "8:45"
+          "name": "Segunda Lei de Newton",
+          "duração": "11:45"
         },
         {
           "id": 4,
-          "name": "Tangente",
-          "duração": "10:12"
-        },
-        {
-          "id": 5,
-          "name": "Cotangente",
-          "duração": "11:23"
-        },
-        {
-          "id": 6,
-          "name": "Secante",
-          "duração": "9:10"
-        },
-        {
-          "id": 7,
-          "name": "Cossecante",
-          "duração": "10:23"
-        },
-        {
-          "id": 8,
-          "name": "Exercícios",
-          "duração": "15:32"
-        }
-      ],
-      "medium_description": "Olá! Sou o João Pontes, professor do curso 'Funções Trigonométricas'. Este curso de matemática destina-se a todos que desejam aprender ou aprofundar seus conhecimentos em trigonometria. Com um total de 8 vídeos, cada um dedicado a um tema específico, este curso tem como objetivo ajudá-lo a entender e calcular as funções trigonométricas e suas aplicações práticas..."
-    },
-    {
-      "id": 2,
-      "name": "Geometria",
-      "image": "https://i.ytimg.com/vi/JRsDEkW_6O0/maxresdefault.jpg",
-      "subject": "Matemática",
-      "prof": "Jorge Esteves",
-      "description": "Olá! Sou o Jorge Esteves, professor do curso 'Geometria'. Neste curso de matemática, você irá explorar os princípios fundamentais da geometria e suas aplicações práticas. Com um total de 10 vídeos, cada um dedicado a um tópico específico, este curso tem como objetivo ajudá-lo a compreender e aplicar conceitos geométricos de forma clara e concisa.",
-      "price": 80,
-      "rating": 2.9,
-      "discount": 0.15,
-      "numVideos": 10,
-      "numReviews": 24,
-      "videoDefault": "https://www.youtube.com/watch?v=JRsDEkW_6O0",
-      "videos": [
-        {
-          "id": 1,
-          "name": "Introdução",
-          "duração": "10:45"
-        },
-        {
-          "id": 2,
-          "name": "Pontos, Retas e Planos",
-          "duração": "11:30"
-        },
-        {
-          "id": 3,
-          "name": "Ângulos e Medidas",
-          "duração": "12:20"
-        },
-        {
-          "id": 4,
-          "name": "Polígonos",
-          "duração": "9:40"
-        },
-        {
-          "id": 5,
-          "name": "Círculos",
-          "duração": "10:15"
-        },
-        {
-          "id": 6,
-          "name": "Triângulos",
-          "duração": "11:50"
-        },
-        {
-          "id": 7,
-          "name": "Quadriláteros",
-          "duração": "10:30"
-        },
-        {
-          "id": 8,
-          "name": "Perímetros",
+          "name": "Terceira Lei de Newton",
           "duração": "9:15"
         },
         {
-          "id": 9,
-          "name": "Áreas",
-          "duração": "11:00"
+          "id": 5,
+          "name": "Lei da Gravitação Universal",
+          "duração": "13:40"
         },
         {
-          "id": 10,
+          "id": 6,
           "name": "Exercícios",
           "duração": "15:00"
         }
       ],
-      "medium_description": "Olá! Sou o Jorge Esteves, professor do curso 'Geometria'. Neste curso de matemática, você irá explorar os princípios fundamentais da geometria e suas aplicações práticas. Com um total de 10 vídeos, cada um dedicado a um tópico específico, este curso tem como objetivo ajudá-lo a compreender e aplicar conceitos geométricos de forma clara e concisa."
+      "medium_description": "Olá! Sou a Francisco Teixeira, professora do curso 'Leis de Newton'. Este curso de física é dedicado a todos os que desejam aprender ou aprofundar seus conhecimentos sobre as leis de movimento de Newton. Com um total de 6 vídeos, cada um focado numa lei ou conceito específico, este curso tem como objetivo ajudá-lo a entender e aplicar as leis de Newton e suas implicações práticas..."
     },
     {
       "id": 5,
@@ -500,94 +423,6 @@
         }
       ],
       "medium_description": "Olá! Sou a Tomás Almeida, professor do curso 'Literatura Portuguesa Contemporânea'. Este curso de língua portuguesa destina-se aos estudantes do 12º ano que desejam explorar a literatura portuguesa do século XXI. Com um total de 3 vídeos, cada um dedicado a um autor ou obra específica, este curso tem como objetivo ajudá-lo a compreender e apreciar a literatura contemporânea de Portugal. Vamos explorar as obras de escritores renomados como José Saramago, António Lobo..."
-    },
-    {
-      "id": 3,
-      "name": "Leis de Newton",
-      "image": "https://i.ytimg.com/vi/B2u8FYE9fWk/maxresdefault.jpg",
-      "subject": "Física e Química",
-      "prof": "Francisco Teixeira",
-      "description": "Olá! Sou a Francisco Teixeira, professora do curso 'Leis de Newton'. Este curso de física é dedicado a todos os que desejam aprender ou aprofundar seus conhecimentos sobre as leis de movimento de Newton. Com um total de 6 vídeos, cada um focado numa lei ou conceito específico, este curso tem como objetivo ajudá-lo a entender e aplicar as leis de Newton e suas implicações práticas. Começamos com uma 'Introdução' ao curso e aos conceitos básicos da física newtoniana. O resto dos vídeos são dedicados a cada uma das 'Três Leis de Newton', à 'Lei da Gravitação Universal', e finalmente, um vídeo de 'Exercícios' para colocar em prática tudo o que aprendemos. Este curso tem uma classificação de 3.8, com base em 45 avaliações. O preço normal é de 90 euros, mas atualmente estamos oferecendo um desconto de 10%, então não perca esta oportunidade! Estou ansiosa para compartilhar todo o meu conhecimento sobre as leis de Newton com você. Vamos começar esta jornada juntos!",
-      "price": 90,
-      "rating": 3.8,
-      "discount": 0.1,
-      "numVideos": 6,
-      "numReviews": 45,
-      "videoDefault": "https://www.youtube.com/watch?v=B2u8FYE9fWk",
-      "videos": [
-        {
-          "id": 1,
-          "name": "Introdução",
-          "duração": "12:30"
-        },
-        {
-          "id": 2,
-          "name": "Primeira Lei de Newton",
-          "duração": "10:20"
-        },
-        {
-          "id": 3,
-          "name": "Segunda Lei de Newton",
-          "duração": "11:45"
-        },
-        {
-          "id": 4,
-          "name": "Terceira Lei de Newton",
-          "duração": "9:15"
-        },
-        {
-          "id": 5,
-          "name": "Lei da Gravitação Universal",
-          "duração": "13:40"
-        },
-        {
-          "id": 6,
-          "name": "Exercícios",
-          "duração": "15:00"
-        }
-      ],
-      "medium_description": "Olá! Sou a Francisco Teixeira, professora do curso 'Leis de Newton'. Este curso de física é dedicado a todos os que desejam aprender ou aprofundar seus conhecimentos sobre as leis de movimento de Newton. Com um total de 6 vídeos, cada um focado numa lei ou conceito específico, este curso tem como objetivo ajudá-lo a entender e aplicar as leis de Newton e suas implicações práticas..."
-    },
-    {
-      "id": 4,
-      "name": "Leis de Conservação da Energia",
-      "image": "https://i.ytimg.com/vi/eLYumnnhLnQ/sddefault.jpg",
-      "subject": "Física e Química",
-      "prof": "Carlos Silva",
-      "description": "Olá! Sou a Carlos Silva, professor do curso 'Leis de Conservação da Energia'. Este curso de física e química destina-se a todos que desejam compreender as leis fundamentais que regem a conservação da energia. Com um total de 5 vídeos, cada um abordando um conceito específico, este curso tem como objetivo ajudá-lo a entender e aplicar as leis de conservação da energia em diferentes situações. Começamos com uma 'Introdução' ao curso, onde exploraremos os conceitos básicos sobre energia e suas formas. Este vídeo possui uma duração de 10 minutos e 15 segundos. Em seguida, abordaremos as leis de conservação da energia mecânica, térmica e elétrica, em vídeos com duração variando entre 8 e 12 minutos. O curso termina com um vídeo de 'Exemplos Práticos', com duração de 15 minutos, onde aplicaremos as leis de conservação da energia em situações do cotidiano. Este curso possui uma classificação de 4.2, com base em 12 avaliações. O preço é de 40 euros. Junte-se a mim neste curso e aprofunde seu conhecimento sobre as leis de conservação da energia!",
-      "price": 40,
-      "rating": 4.2,
-      "numVideos": 5,
-      "numReviews": 12,
-      "videoDefault": "https://www.youtube.com/watch?v=eLYumnnhLnQ",
-      "videos": [
-        {
-          "id": 1,
-          "name": "Introdução",
-          "duração": "10:15"
-        },
-        {
-          "id": 2,
-          "name": "Lei de Conservação da Energia Mecânica",
-          "duração": "9:34"
-        },
-        {
-          "id": 3,
-          "name": "Lei de Conservação da Energia Térmica",
-          "duração": "11:43"
-        },
-        {
-          "id": 4,
-          "name": "Lei de Conservação da Energia Elétrica",
-          "duração": "10:54"
-        },
-        {
-          "id": 5,
-          "name": "Exemplos Práticos",
-          "duração": "15:23"
-        }
-      ],
-      "medium_description": "Olá! Sou a Carlos Silva, professor do curso 'Leis de Conservação da Energia'. Este curso de física e química destina-se a todos que desejam compreender as leis fundamentais que regem a conservação da energia. Com um total de 5 vídeos, cada um abordando um conceito específico, este curso tem como objetivo ajudá-lo a entender e aplicar as leis de conservação da energia em diferentes situações."
     }
   ]
 }
