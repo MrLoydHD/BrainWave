@@ -187,7 +187,7 @@ function CourseInfo({ course, error, isPending}) {
                                             Comprar
                                         </button>
                                         <p className="text-center">ou</p>
-                                        <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded flex justify-center">${course.id}/${course.videos[0].id}
+                                        <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded flex justify-center" onClick={handleSubmit}>
                                                 <div className="image-container mt-2">
                                                     <p>Pagar com</p> 
                                                 </div>
