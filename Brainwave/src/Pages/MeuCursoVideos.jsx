@@ -185,7 +185,7 @@ function MeuCursoVideos() {
                                     <div className="p-4">
                                         <div className='flex flex-row items-center pb-6'>
                                             <img className="w-12 h-12 object-cover rounded-full mr-4" src={image} alt="Imagem de aluno" />
-                                            <h4 className="text-lg font-bold mb-2">Mano bro</h4>
+                                            <h4 className="text-lg font-bold mb-2">{user}</h4>
                                         </div>
                                         <p className="text-gray-700">{replyContent2}</p>
                                     </div>

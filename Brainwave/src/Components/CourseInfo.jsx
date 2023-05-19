@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
 import image from '../Images/PayPal-Logo.png';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 function CourseInfo({ course, error, isPending}) {
     const [showAlert, setShowAlert] = useState(false);
@@ -67,7 +67,7 @@ function CourseInfo({ course, error, isPending}) {
 
             resetForm();
 
-            history.push('/MeuCursoVideos/${course.id}/${course.videos[0].id}');
+            navigate('/MeuCursoVideos/${course.id}/${course.videos[0].id}');
         }
     };
 
@@ -180,9 +180,7 @@ function CourseInfo({ course, error, isPending}) {
                                             </label>
                                         </div>
                                         <button className="bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded mb-4" onClick={handleSubmit}>
-                                            <Link key={course.id} to={`/MeuCursoVideos/${course.id}/${course.videos[0].id}`}>
                                                 Comprar
-                                            </Link>
                                         </button>
                                         <p className="text-center">ou</p>
                                         <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded flex justify-center">
