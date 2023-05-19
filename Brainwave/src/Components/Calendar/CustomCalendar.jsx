@@ -13,7 +13,18 @@ export default function CustomCalendar() {
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedDates, setSelectedDates] = useState({ start: new Date(), end: new Date() });
     const [title, setTitle] = useState("");
-    const [discipline, setDiscipline] = useState("");
+
+    const [selectedDiscipline, setSelectedDiscipline] = useState("");
+    const [selectEditDiscipline, setSelectEditDiscipline] = useState("");
+    const [discipline, setDiscipline] = useState([
+        'Selecione um tema',
+        'Matemática',
+        'Português',
+        'Fisica ou Quimica',
+    ]);
+    const [otherDiscipline, setOtherDiscipline] = useState('');
+    const [otherDisciplineEdit, setOtherDisciplineEdit] = useState('');
+
     const [tasks, setTasks] = useState("");
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [isEditMode, setIsEditMode] = useState(false);
@@ -27,7 +38,7 @@ export default function CustomCalendar() {
     localStorage.setItem('myEvents', JSON.stringify(myEvents));
 
     const allFieldFilled = () => {
-        return title && discipline && tasks;
+        return title && tasks;
     }
 
 
@@ -55,7 +66,7 @@ export default function CustomCalendar() {
         } else {
             const tasksArray = tasks.split(';').filter((task) => task.trim() !== '');
             //se o evento tiver os campos vazios ele não salva
-            if (!title || !discipline || !tasks) {
+            if (!title || !tasks) {
                 toast.error('Preencha todos os campos!');
                 return;
             }
@@ -63,7 +74,7 @@ export default function CustomCalendar() {
                 start: isEditMode ? selectedEvent.start : selectedDates.start,
                 end: isEditMode ? selectedEvent.end : selectedDates.end,
                 title,
-                discipline,
+                discipline: selectEditDiscipline === 'Outros' ? otherDisciplineEdit : selectEditDiscipline,
                 tasks: tasksArray,
             }
             setEvents((prev) => prev.map((event) => event === selectedEvent ? newEvent : event)); 
@@ -73,7 +84,8 @@ export default function CustomCalendar() {
                 setIsEdited(false);
             }, 2000);
             setTitle("");
-            setDiscipline("");
+            setSelectEditDiscipline('Selecione uma disciplina');
+            setOtherDisciplineEdit("");
             setTasks("");
             handleModalClose();
         }
@@ -81,7 +93,7 @@ export default function CustomCalendar() {
 
     const handleModalClose = () =>{ 
         setTitle("");
-        setDiscipline("");
+        setSelectedDiscipline('Selecione uma disciplina');
         setTasks("");
         setModalOpen(false);
         setIsEditMode(false);
@@ -99,7 +111,7 @@ export default function CustomCalendar() {
                 start: selectedDates.start,
                 end: selectedDates.end,
                 title,
-                discipline,
+                discipline: selectedDiscipline === 'Outros' ? otherDiscipline : selectedDiscipline,
                 tasks: tasksArray,
             }
             setEvents((prev) => [...prev, newEvent]);
@@ -109,7 +121,8 @@ export default function CustomCalendar() {
             }, 2000);
             setTitle("");
             setModalOpen(false);
-            setDiscipline("");
+            setSelectedDiscipline('Selecione uma disciplina');
+            setOtherDiscipline("");
             setTasks("");
         
         }
@@ -165,18 +178,36 @@ export default function CustomCalendar() {
                                     />
                                 </div>
                                 <div className="mt-2">
+                                {selectedDiscipline === 'Outros' ? (
                                     <input
-                                    type="text"
-                                    className="input placeholder:text-gray-500 border-2 input-bordered w-full mb-4"
-                                    placeholder="Nome da Disciplina"
-                                    value={discipline}
-                                    onChange={(e) => setDiscipline(e.target.value)}
-                                    required
+                                        type="text"
+                                        className="input placeholder:text-gray-500 border-2 input-bordered w-full mb-4"
+                                        placeholder="Tema à sua escolha"
+                                        value={otherDiscipline}
+                                        onChange={(e) => setOtherDiscipline(e.target.value)}
+                                        required
                                     />
+                                ) : (
+                                    <select
+                                        className="input placeholder:text-gray-500 border-2 input-bordered w-full mb-4"
+                                        value={selectedDiscipline}
+                                        onChange={(e) => {
+                                            setSelectedDiscipline(e.target.value);
+                                        }}
+                                        required
+                                    >
+                                        {discipline.map((item) => (
+                                            <option key={item} value={item}>
+                                                {item}
+                                            </option>
+                                        ))}
+                                        <option value='Outros'>Outros</option>
+                                    </select>
+                                )}
                                 </div>
                                 <div className="mt-2">
                                     <textarea
-                                        className="textarea placeholder:text-gray-500 border-2 textarea-bordered w-full mb-4"
+                                        className="textarea placeholder:text-gray-500 placeholder:text-lg text-lg border-2 textarea-bordered w-full mb-4"
                                         placeholder="Tarefas, separadas por ;"
                                         value={tasks}
                                         onChange={(e) => setTasks(e.target.value)}
@@ -239,7 +270,7 @@ export default function CustomCalendar() {
                                     <h3 className="text-xl font-bold text-center mr-4 leading-6 text-gray-900" id="modal-title">
                                         {selectedEvent.title}
                                     </h3>
-                                    <p className="mt-4 text-lg ml-10"><span className='font-bold'>Disciplina: </span>{selectedEvent.discipline}</p>
+                                    <p className="mt-4 text-lg ml-10"><span className='font-bold'>Tema: </span>{selectedEvent.discipline}</p>
                                     <div className="mt-3 ml-10">
                                         <h4 className="font-bold text-lg">Tarefas:</h4>
                                         <div className='ml-8 text-lg'>
@@ -267,18 +298,36 @@ export default function CustomCalendar() {
                                             />
                                         </div>
                                         <div className="mt-2">
+                                        {selectEditDiscipline === 'Outros' ? (
                                             <input
                                                 type="text"
                                                 className="input placeholder:text-gray-500 border-2 input-bordered w-full mb-4"
-                                                placeholder="Nome da Disciplina"
-                                                value={discipline}
-                                                onChange={(e) => setDiscipline(e.target.value)}
+                                                placeholder="Tema à sua escolha"
+                                                value={otherDisciplineEdit}
+                                                onChange={(e) => setOtherDisciplineEdit(e.target.value)}
                                                 required
                                             />
+                                        ) : (
+                                            <select
+                                                className="input placeholder:text-gray-500 border-2 input-bordered w-full mb-4"
+                                                value={selectEditDiscipline}
+                                                onChange={(e) => {
+                                                    setSelectEditDiscipline(e.target.value);
+                                                }}
+                                                required
+                                            >
+                                                {discipline.map((item) => (
+                                                    <option key={item} value={item}>
+                                                        {item}
+                                                    </option>
+                                                ))}
+                                                <option value='Outros'>Outros</option>
+                                            </select>
+                                        )}
                                         </div>
                                         <div className="mt-2">
                                             <textarea
-                                                className="textarea placeholder:text-gray-500 border-2 textarea-bordered w-full mb-4"
+                                                className="textarea placeholder:text-gray-500 text-lg placeholder:text-lg border-2 textarea-bordered w-full mb-4"
                                                 placeholder="Tarefas, separadas por ;"
                                                 value={tasks}
                                                 onChange={(e) => setTasks(e.target.value)}
@@ -333,7 +382,7 @@ export default function CustomCalendar() {
                                         className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                                         onClick={() => {setIsEditMode(false);
                                                         setTitle('')
-                                                        setDiscipline('')
+                                                        setSelectEditDiscipline("Selecione um Tema")
                                                         setTasks('')}}
                                     >
                                         Cancelar

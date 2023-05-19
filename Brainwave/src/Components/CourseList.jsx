@@ -17,7 +17,7 @@ const CourseList = ({ courses }) => {
                             <p className="text-gray-700 text-sm mb-4">{ course.medium_description }</p>
                         </div>
                         <div className="absolute top-0 right-0 p-4">
-                            <div className="bg-green-500 text-white text-sm rounded-full px-3 py-1">{ course.price }€</div>
+                            <div className="bg-green-500 text-white text-lg font-semibold rounded-full px-3 py-1">{ course.price }€</div>
                         </div>
                         <div className="absolute bottom-0 right-0 p-4">
                             <div className="bg-gray-200 text-gray-500 text-xs rounded-full px-3 py-1">{ course.subject }</div>
