@@ -15,6 +15,8 @@ function TodosCursos() {
     const [unreapeatedSubjects, setUnreapeatedSubjects] = useState([]);
     const selectRef = useRef(null);
     const [selectedFormControl, setSelectedFormControl] = useState(null);
+    // para o search bar
+    const [searchTerm, setSearchTerm] = useState("");
 
     // atualiza o estado filteredCourses com o valor de courses
     useEffect(() => {
@@ -44,7 +46,7 @@ function TodosCursos() {
     const filterResults = () => {
         var filtered = [];
         if (choice === "") {
-            filtered = courses;
+            filtered = filteredCourses;
 
         } else{
             for (var i = 0; i < courses.length; i++) {
@@ -90,14 +92,34 @@ function TodosCursos() {
           }
     }
 
+    const resetFilterVisual = () => {
+        // Volta o select para a opção padrão
+        selectRef.current.value = '';
+        setChoice('');
+        setValorSlider(200);
+        setSelectedRadio('');
+
+        if (selectedFormControl) {
+            selectedFormControl.checked = false;
+          }
+    }
+
+    const updateFilteredCourses = (filteredCourses) => {
+        setFilteredCourses(filteredCourses);
+    }
+
+    const setSearchTermm = (searchTerm) => {
+        setSearchTerm(searchTerm);
+    }
+
     return (
         <div className='lili min-h-screen'>
             <header>
                 <Navbar></Navbar>
             </header> 
             <main>
-                <div className='flex justify-center items-center mt-10'>
-                    {!isPending && <Search courses={courses}></Search>}
+                <div className='flex justify-center items-center mt-10'>    
+                    {!isPending && <Search updateFilteredCourses={updateFilteredCourses} courses={courses} resetFilterVisual={resetFilterVisual} searchTerm={searchTerm} setSearchTermm={setSearchTermm}></Search>}
                 </div>
                 <div className='flex w-full items-start mt-10'>
                     <div className='w-1/4 ml-32 p-10 border bg-white rounded-lg shadow-lg'>
@@ -112,7 +134,6 @@ function TodosCursos() {
                                 {!isPending && unreapeatedSubjects.map(subject => (
                                     <option value={subject}>{subject}</option>
                                 ))}
-                                {console.log(choice)}
                                 </select>
                             </div>
                             <div className="items-center mb-10">
@@ -150,8 +171,15 @@ function TodosCursos() {
                             </div>
                         </div>
                         <div className='flex justify-center gap-2'>
-                            <button className="btn bg-red-800 content-center border-red-800 py-4 text-xl text-white hover:bg-red-900 hover:border-red-900" onClick={resetFilters}>Apagar filtros</button>
-                            <button className="btn py-4 bg-green-600 border-green-600 hover:bg-green-900 hover:border-green-900 text-xl content-center text-white" onClick={filterResults}>Aplicar filtros</button>
+                            <button className="btn bg-red-800 content-center border-red-800 py-4 text-xl text-white hover:bg-red-900 hover:border-red-900" 
+                            onClick={() => {
+                                resetFilters();
+                                setSearchTerm('');
+                                }}>Apagar filtros</button>
+                            <button className="btn py-4 bg-green-600 border-green-600 hover:bg-green-900 hover:border-green-900 text-xl content-center text-white" onClick={() => {
+                                filterResults();
+                                setSearchTerm('');
+                                }}>Aplicar filtros</button>
                         </div>
                     </div>
                     <div className='w-3/4 p-10'>
