@@ -1,10 +1,9 @@
 import Navbar from '../Components/Navbar'
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player'
 import image from '../Images/novoutilizador.jpg';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../Contexts/UserContext';
 
 function MeuCursoVideos() {
@@ -25,6 +24,13 @@ function MeuCursoVideos() {
     const [disabledButton2, setDisabledButton2] = useState(false);
     const [commentContent, setCommentContent] = useState('');
     const [submitComment, setSubmitComment] = useState(false);
+    const [emptyCommentError, setEmptyCommentError] = useState(false);
+    const [emptyReplyError, setEmptyReplyError] = useState(false);
+    const [emptyReplyError2, setEmptyReplyError2] = useState(false);
+
+    //refBox
+    const replyBoxRef = useRef({});
+
 
     // Mocked comments
     const commentList = [
@@ -45,28 +51,76 @@ function MeuCursoVideos() {
         
 
 
-    const handleReply = (id) => {
+    const handleReply = () => {
         setShowReplyBox(!showReplyBox);
     }
 
     const handleSubmitReply = () => {
-        setShowReplyBox(!showReplyBox);
-        setSubmitReply(!submitReply);
-        setDisabledButton(true);
+        if (!replyContent.trim()) {
+            setEmptyReplyError(true);
+            setTimeout(() => {
+                setEmptyReplyError(false);
+            }, 3000);
+        } else {
+            setShowReplyBox(!showReplyBox);
+            setSubmitReply(!submitReply);
+            setDisabledButton(true);
+        }
+    }
+
+    const handleKeyPressReply = (event) => {
+        if(event.key === 'Enter' && !event.shiftKey){
+            event.preventDefault();
+            handleSubmitReply();
+        }
     }
 
     const handleReply2 = () => {
         setShowReplyBox2(!showReplyBox2);
+        if(!showReplyBox2){
+            setTimeout(() => { 
+                replyBoxRef.current.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
     }
 
     const handleSubmitReply2 = () => {
-        setShowReplyBox2(!showReplyBox2);
-        setSubmitReply2(!submitReply2);
-        setDisabledButton2(true);
+        if (!replyContent2.trim()) {
+            setEmptyReplyError2(true);
+            setTimeout(() => {
+                setEmptyReplyError2(false);
+            }, 3000);
+        } else {
+            setShowReplyBox2(!showReplyBox2);
+            setSubmitReply2(!submitReply2);
+            setDisabledButton2(true);
+        }
+    }
+
+    const handleKeyPressReply2 = (event) => {
+        if(event.key === 'Enter' && !event.shiftKey){
+            event.preventDefault();
+            handleSubmitReply2();
+        }
     }
 
     const handleSubmitComment = () => {
-        setSubmitComment(!submitComment);
+        if (!commentContent.trim()) {
+            setEmptyCommentError(true);
+            setTimeout(() => {
+                setEmptyCommentError(false);
+            }, 3000);
+        } else {
+            setSubmitComment(!submitComment);
+        }
+    } 
+
+
+    const handleKeyPress = (event) => {
+        if(event.key === 'Enter' && !event.shiftKey){
+            event.preventDefault();
+            handleSubmitComment();
+        }
     }
 
   
@@ -100,7 +154,8 @@ function MeuCursoVideos() {
                         <h3 className="text-3xl font-bold mb-2 pb-3">Comentários:</h3>
                             {(!submitComment) && <div className="mb-4 bg-white shadow rounded-lg overflow-hidden">
                                 <div className="p-4">
-                                    <textarea placeholder="Escreve um comentário" value={commentContent} className="w-full p-2 border border-gray-300 rounded" onChange={(e) => setCommentContent(e.target.value)}></textarea>
+                                    <textarea placeholder="Escreve um comentário" value={commentContent} className="w-full p-2 border border-gray-300 rounded" onChange={(e) => setCommentContent(e.target.value)} onKeyDown={handleKeyPress}></textarea>
+                                    {emptyCommentError && <p className="text-red-500">Comentário vazio</p>}
                                 </div>
                                 <div className="px-4 py-2 bg-gray-100 border-t border-gray-200">
                                     <button className="text-green-600 hover:text-green-900  text-sm font-semibold" onClick={handleSubmitComment}>Comentar</button>
@@ -136,7 +191,8 @@ function MeuCursoVideos() {
                             {(showReplyBox) &&
                                 <div className="mb-4 bg-white shadow rounded-lg overflow-hidden ml-10">
                                     <div className="p-4">
-                                        <textarea placeholder="Escreva a sua resposta" value={replyContent} className="w-full p-2 border border-gray-300 rounded" onChange={(e) => setReplyContent(e.target.value)}></textarea>
+                                        <textarea placeholder="Escreva a sua resposta" value={replyContent} className="w-full p-2 border border-gray-300 rounded" onChange={(e) => setReplyContent(e.target.value)} onKeyDown={handleKeyPressReply}></textarea>
+                                        {emptyReplyError && <p className="text-red-500">Comentário vazio</p>}
                                     </div>
                                     <div className="px-4 py-2 bg-gray-100 border-t border-gray-200">
                                         <button className="text-green-600 hover:text-green-900  text-sm font-semibold" onClick={handleSubmitReply}>Enviar Resposta</button>
@@ -173,7 +229,8 @@ function MeuCursoVideos() {
                             {(showReplyBox2) &&
                                 <div className="mb-4 bg-white shadow rounded-lg overflow-hidden ml-10">
                                     <div className="p-4">
-                                        <textarea placeholder="Escreva a sua resposta" value={replyContent2} className="w-full p-2 border border-gray-300 rounded" onChange={(e) => setReplyContent2(e.target.value)}></textarea>
+                                        <textarea placeholder="Escreva a sua resposta" value={replyContent2} className="w-full p-2 border border-gray-300 rounded" onChange={(e) => setReplyContent2(e.target.value)} onKeyDown={handleKeyPressReply2} ref={replyBoxRef}></textarea>
+                                        {emptyReplyError2 && <p className="text-red-500">Comentário vazio</p>}
                                     </div>
                                     <div className="px-4 py-2 bg-gray-100 border-t border-gray-200">
                                         <button className="text-green-600 hover:text-green-900  text-sm font-semibold" onClick={handleSubmitReply2}>Enviar Resposta</button>
