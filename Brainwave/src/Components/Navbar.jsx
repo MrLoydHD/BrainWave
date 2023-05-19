@@ -41,7 +41,11 @@ function Navbar() {
       <div className="flex-none">
         <ul className="menu menu-horizontal text-xl px-1 mr-4">
           <li><Link to={"/TodosCursos"}>Todos Os Cursos</Link></li>
-          {userType === 'teacher' && <li><Link to="#">Espaço do Professor</Link></li>}
+          {userType === 'teacher' && 
+            <li>
+              <Link to="/EspacoProfessor">Espaço do Professor</Link>
+            </li>
+          }
           <li tabIndex={0}>
               <Link to="#">
                 Meu Espaço
@@ -71,7 +75,7 @@ function Navbar() {
             )}
           </label>
           {notificationOn && (
-            <ul tabIndex={0} className="mt-3 bg-base-100 p-2 h-auto shadow-lg menu dropdown-content bg-base-100 rounded-box w-96">
+            <ul tabIndex={0} className="mt-3 p-2 h-auto shadow-lg menu dropdown-content bg-base-100 rounded-box w-96">
               {userType === 'teacher' && (
                 <>
                   {notifications.map(notification => (
