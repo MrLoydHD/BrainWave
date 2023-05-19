@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 
-const CursosProf = ({ courses }) => {
+function CursosProf({ courses }) {
 
   /* const [isModalOpen, setIsModalOpen] = useState(false); */
 
