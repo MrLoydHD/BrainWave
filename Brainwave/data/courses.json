@@ -12,7 +12,6 @@
       "rating": 4.8,
       "subject": "Matemática",
       "discount": 0.15,
-      "numVideos": 8,
       "numReviews": 29,
       "videoDefault": "https://www.youtube.com/watch?v=ECsEcrVKG5k",
       "videos": [
@@ -70,7 +69,6 @@
       "rating": 2.9,
       "subject": "Matemática",
       "discount": 0.15,
-      "numVideos": 10,
       "numReviews": 24,
       "videoDefault": "https://www.youtube.com/watch?v=JRsDEkW_6O0",
       "videos": [
@@ -138,7 +136,6 @@
       "price": 90,
       "rating": 3.8,
       "discount": 0.1,
-      "numVideos": 6,
       "numReviews": 45,
       "videoDefault": "https://www.youtube.com/watch?v=B2u8FYE9fWk",
       "videos": [
@@ -186,7 +183,6 @@
       "rating": 4.2,
       "discount": 0,
       "subject": "Física e Química",
-      "numVideos": 5,
       "numReviews": 12,
       "videoDefault": "https://www.youtube.com/watch?v=eLYumnnhLnQ",
       "videos": [
@@ -229,7 +225,6 @@
       "rating": 3.5,
       "discount": 0.1,
       "subject": "Português",
-      "numVideos": 6,
       "numReviews": 18,
       "videoDefault": "https://www.youtube.com/watch?v=FFGUKUQ1Pao",
       "videos": [
@@ -277,7 +272,6 @@
       "rating": 2.9,
       "subject": "Português",
       "discount": 0,
-      "numVideos": 3,
       "numReviews": 22,
       "videoDefault": "https://www.youtube.com/watch?v=IL7iiAxdi5E",
       "videos": [
@@ -311,7 +305,6 @@
       "price": 120,
       "rating": 4.8,
       "discount": 0.15,
-      "numVideos": 8,
       "numReviews": 29,
       "videoDefault": "https://www.youtube.com/watch?v=ECsEcrVKG5k",
       "videos": [
