@@ -202,7 +202,7 @@ function MeuCursoVideos() {
                     <h3 className="text-xl font-bold mb-2">Lista de vídeos</h3>
                     {course.videos.map(video => (
                         <Link key={video.id} to={`/MeuCursoVideos/${course.id}/${video.id}`}>
-                            <div key={video.id} className={`card lg:card-side mb-4 bg-white shadow rounded-lg overflow-hidden cursor-pointer ${Number(videoId) === video.id ? 'bg-cyan-200' : 'bg-white'} p-2`} onClick={() => handleVideoSelect(video)}>
+                            <div key={video.id} className={`card lg:card-side mb-4 bg-white shadow rounded-lg overflow-hidden cursor-pointer ${Number(videoId) === video.id ? 'bg-cyan-100' : 'bg-white'} p-2`} onClick={() => handleVideoSelect(video)}>
                                 <figure><img className="h-16 w-22" src={course.image} alt="Movie"/></figure>
                                 <div className="p-4 flex flex-row items-center gap-2">
                                     <div>

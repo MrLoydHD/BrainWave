@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
 import image from '../Images/PayPal-Logo.png';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function CourseInfo({ course, error, isPending}) {
     const [showAlert, setShowAlert] = useState(false);
@@ -11,6 +11,7 @@ function CourseInfo({ course, error, isPending}) {
     const [cvv, setCvv] = useState('');
     const [saveCard, setSaveCard] = useState(false);
     const [errors, setErrors] = useState({});
+    const navigate = useNavigate();
       
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -67,7 +68,7 @@ function CourseInfo({ course, error, isPending}) {
 
             resetForm();
 
-            history.push('/MeuCursoVideos/${course.id}/${course.videos[0].id}');
+            navigate(`/MeuCursoVideos/${course.id}/${course.videos[0].id}`)
         }
     };
 
@@ -179,21 +180,20 @@ function CourseInfo({ course, error, isPending}) {
                                                 <span className="ml-2 text-gray-700">Salvar cartão para compras futuras</span>
                                             </label>
                                         </div>
-                                        <button className="bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded mb-4" onClick={handleSubmit}>
-                                            <Link key={course.id} to={`/MeuCursoVideos/${course.id}/${course.videos[0].id}`}>
-                                                Comprar
-                                            </Link>
+                                        <button 
+                                            className="bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded mb-4" 
+                                            onClick={handleSubmit}
+                                        >
+                                            Comprar
                                         </button>
                                         <p className="text-center">ou</p>
-                                        <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded flex justify-center">
-                                            <Link key={course.id} to={`/MeuCursoVideos/${course.id}/${course.videos[0].id}`}>
+                                        <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded flex justify-center">${course.id}/${course.videos[0].id}
                                                 <div className="image-container mt-2">
                                                     <p>Pagar com</p> 
                                                 </div>
                                                 <div className="image-container">
                                                     <img className="w-full h-full object-cover" src={image} alt="title" />
                                                 </div>
-                                            </Link>
                                         </button>
                                     </div>
                                 </div>
