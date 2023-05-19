@@ -38,7 +38,7 @@ const CursosProf = ({ courses }) => {
         </thead>
         <tbody>
           {courses.map((course) => (
-            <tr>
+            <tr key={course.id}>
               <td className="py-2 px-4">{course.image}</td>
               <td className="py-2 px-4">{course.name}</td>
               <td className="py-2 px-4">{course.numVideos}</td>
