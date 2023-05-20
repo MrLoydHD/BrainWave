@@ -143,7 +143,6 @@ function CursosProf({ courses }) {
   };
 
   useEffect(() => {
-    // Filtrar apenas os cursos do professor "João Pontes"
     const filtered = courses.filter((course) => course.prof === 'João Pontes');
     setFilteredCourses(filtered);
   }, [courses]);

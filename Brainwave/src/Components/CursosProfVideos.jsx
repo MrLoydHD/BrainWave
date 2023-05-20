@@ -80,7 +80,6 @@ function CursosProfVideos({ course , courses }) {
                 .then((response) => {
                 if (response.ok) {
                     console.log('Curso atualizado com sucesso.');
-                    setIsVideoDeleted(true); // Define o estado para sinalizar a exclusão do vídeo
                 } else {
                     throw new Error('Erro ao atualizar o curso.');
                 }
