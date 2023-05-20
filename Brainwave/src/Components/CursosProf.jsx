@@ -251,9 +251,9 @@ function CursosProf({ courses }) {
                                 className={`select select-bordered w-full ${errors.courseSubject ? 'border-red-500' : ''}`}
                             >
                                 <option value="">Selecione uma disciplina</option>
-                                <option value="math">Matemática</option>
-                                <option value="science">Ciências</option>
-                                <option value="history">História</option>
+                                <option value="Matemática">Matemática</option>
+                                <option value="Física e Química">Física e Química</option>
+                                <option value="Português">Português</option>
                             </select>
                             {errors.courseSubject && <p className="text-red-500 mt-2">{errors.courseSubject}</p>}
                         </div>
