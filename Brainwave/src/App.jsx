@@ -7,6 +7,7 @@ import MeusCursos from './Pages/MeusCursos'
 import EventCalendar from './Pages/EventCalendar'
 import MeuCursoVideos from './Pages/MeuCursoVideos'
 import EspacoProfessor from './Pages/EspacoProfessor'
+import EspacoProfessorVideos from './Pages/EspacoProfessorVideos'
 import { useState, useMemo } from 'react'
 import { UserContext } from './Contexts/UserContext'
 
@@ -26,7 +27,7 @@ function App() {
           <Route path="/EventCalendar" Component={EventCalendar}></Route>
           <Route path="/MeuCursoVideos/:courseId/:videoId" Component={MeuCursoVideos}></Route>
           <Route path="/EspacoProfessor" Component={EspacoProfessor}></Route>
-          <Route path="/EspacoProfessor/:id" Component={MeusCursos}></Route>
+          <Route path="/EspacoProfessor/:id" Component={EspacoProfessorVideos}></Route>
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
