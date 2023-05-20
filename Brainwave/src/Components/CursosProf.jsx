@@ -133,12 +133,12 @@ function CursosProf({ courses }) {
           {filteredCourses.map((course) => (
             <tr key={course.id}>
               <td className="py-2 px-4">
-                <Link to={`/EspacoProfessorVideo/${course.id}`}>
+                <Link to={`/EspacoProfessor/${course.id}`}>
                   <img className="w-30 h-20 object-cover" src={course.image} alt={'title'} />
                 </Link>
               </td>
               <td className="py-2 px-4">
-              <Link to={`/EspacoProfessorVideo/${course.id}`}>{course.name}</Link>
+              <Link to={`/EspacoProfessor/${course.id}`}>{course.name}</Link>
               </td>
               <td className="py-2 px-4">{course.videos.length}</td>
               <td className="py-2 px-4">{course.price}/mês</td>

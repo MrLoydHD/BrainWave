@@ -8,6 +8,7 @@ import { UserContext } from '../Contexts/UserContext';
 
 function MeuCursoVideos() {
     const { courseId, videoId } = useParams();
+    
     const { data: course, error, isPending } = useFetch('http://localhost:3000/courses/' + courseId);
     
     const {userType, setUserType} = useContext(UserContext);

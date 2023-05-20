@@ -26,6 +26,7 @@ function App() {
           <Route path="/EventCalendar" Component={EventCalendar}></Route>
           <Route path="/MeuCursoVideos/:courseId/:videoId" Component={MeuCursoVideos}></Route>
           <Route path="/EspacoProfessor" Component={EspacoProfessor}></Route>
+          <Route path="/EspacoProfessor/:id" Component={MeusCursos}></Route>
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
