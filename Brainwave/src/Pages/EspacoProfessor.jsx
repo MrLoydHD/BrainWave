@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import Navbar from '../Components/Navbar';
 import useFetch from '../Hooks/useFetch';
-import image from '../Images/novoutilizador.jpg';
+import image from '../Images/novoutilizador1.png';
 
 import MeusCursos from '../Components/CursosProf';
 import Comentarios from '../Components/Comentarios';
@@ -35,12 +35,8 @@ function EspacoProfessor() {
       <main className="flex h-screen bg-gray-100">
         <div className="w-1/4 bg-white border-r">
             <div className="p-4 flex flex-col items-center">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-20 rounded-full">
-                        <img className="w-full h-full object-cover" src={user.photo} alt={"title"} />
-                    </div>
-                </label>
-                <h2 className="text-3xl font-medium text-center">{user.name}</h2>
+              <img className="w-9/12 h-full object-cover rounded-ful avatar" src={user.photo} alt={"title"} />
+              <h2 className="text-3xl font-medium text-center">{user.name}</h2>
             </div>
             <div className="mt-8">
                 <ul className="space-y-2">
