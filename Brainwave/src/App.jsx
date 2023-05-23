@@ -8,13 +8,19 @@ import EventCalendar from './Pages/EventCalendar'
 import MeuCursoVideos from './Pages/MeuCursoVideos'
 import EspacoProfessor from './Pages/EspacoProfessor'
 import EspacoProfessorVideos from './Pages/EspacoProfessorVideos'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { UserContext } from './Contexts/UserContext'
 
 function App() {
-  const [userType, setUserType] = useState('student'); // inicialmente definido como 'student'
+  const storedUserType = localStorage.getItem('userType') || 'student'; // Carrega o userType do localStorage ou define como 'student' se não houver
+
+  const [userType, setUserType] = useState(storedUserType); // inicialmente definido com o valor do localStorage
 
   const value = useMemo(() => ({ userType, setUserType }), [userType, setUserType]); // para evitar re-renderização desnecessária
+
+  useEffect(() => {
+    localStorage.setItem('userType', userType); // Atualiza o userType no localStorage sempre que ele for alterado
+  }, [userType]);
 
   return (
     <UserContext.Provider value={value}>

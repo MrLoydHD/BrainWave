@@ -10,8 +10,8 @@ function ComentariosCard({ name, comment }) {
         <div className="flex items-start p-4 bg-white shadow-sm rounded-md">
           <img className="w-10 h-10 object-cover rounded-full" src={image} alt={name} />
           <div className="ml-4 flex-1">
-            <p className="font-medium">{name} comentou:</p>
-            <p className="text-sm text-gray-500">{comment}</p>
+            <p className="font-medium text-xl">{name} comentou:</p>
+            <p className="text-sm text-gray-500 text-lg">{comment}</p>
           </div>
         </div>
       </Link>

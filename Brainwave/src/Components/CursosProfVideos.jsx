@@ -141,29 +141,29 @@ function CursosProfVideos({ course , courses }) {
     <div>
       <div className="flex justify-between items-center mb-20">
         <div>
-            <h1 className="text-2xl font-bold">{ course.name }</h1>
-            <p className="text-gray-500">Número de vídeos: { course.videos.length }</p>
+            <h1 className="text-5xl font-bold">{ course.name }</h1>
+            <p className="text-gray-500 text-2xl">Número de vídeos: { course.videos.length }</p>
         </div>
-        <label htmlFor="modal" className="bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={openModal}>
+        <label htmlFor="modal" className="bg-green-600 border-green-600 hover:bg-green-900 hover:border-green-900 text-white text-2xl font-bold py-4 px-10 rounded" onClick={openModal}>
           Adicionar Vídeos
         </label>
       </div>
       <table className="mt-4 w-full">
         <thead>
           <tr>
-            <th className="py-2 px-4 bg-gray-200 text-left"></th>
-            <th className="py-2 px-4 bg-gray-200 text-left">Nome</th>
-            <th className="py-2 px-4 bg-gray-200 text-left">Duração</th>
-            <th className="py-2 px-4 bg-gray-200 text-left"></th>
+            <th className="py-2 px-4 lili2 text-left"></th>
+            <th className="py-2 px-4 lili2 text-left font-bold">Nome</th>
+            <th className="py-2 px-4 lili2 text-left font-bold">Duração</th>
+            <th className="py-2 px-4 lili2 text-left font-bold"></th>
           </tr>
         </thead>
         <tbody>
           {courseVideos.map((video) => (
-            <tr key={video.id}>
+            <tr key={video.id} className='hover:bg-opacity-30 hover:bg-teal-200'>
               <td className="py-2 px-4">
                   <img className="w-30 h-20 object-cover" src={course.image} alt={'title'} />
               </td>
-              <td className="py-2 px-4">{video.name}</td>
+              <td className="py-2 text-lg font-semibold px-4">{video.name}</td>
               <td className="py-2 px-4">{video.duração}</td>
               <td className="py-2 px-4 dropdown dropdown-end mr-4">
                 <div className="relative inline-block text-left mt-4">
@@ -173,7 +173,7 @@ function CursosProfVideos({ course , courses }) {
                     </div>
                   </label>
                   {settingsOn && (
-                    <ul tabIndex={0} className="p-2 shadow-lg menu menu-compact dropdown-content bg-base-100 rounded-box w-52 absolute right-0">
+                    <ul tabIndex={0} className="p-2 shadow-lg menu menu-compact dropdown-content bg-base-100 rounded-box w-52 absolute top-0 left-12">
                       <li>
                         <Link to="#">Editar vídeo</Link>
                       </li>

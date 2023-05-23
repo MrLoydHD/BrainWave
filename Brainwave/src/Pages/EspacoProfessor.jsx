@@ -32,8 +32,8 @@ function EspacoProfessor() {
       <header>
         <Navbar></Navbar>
       </header>
-      <main className="flex h-screen bg-gray-100">
-        <div className="w-1/4 bg-white border-r">
+      <main className="flex h-screen">
+        <div className="w-1/4 border-r lili2">
             <div className="p-4 flex flex-col items-center">
               <img className="w-9/12 h-full object-cover rounded-ful avatar" src={user.photo} alt={"title"} />
               <h2 className="text-3xl font-medium text-center">{user.name}</h2>
@@ -41,10 +41,37 @@ function EspacoProfessor() {
             <div className="mt-8">
                 <ul className="space-y-2">
                 <li>
-                    <a className={`block p-4 text-gray-600 hover:bg-gray-200 ${selectedOption === 'meus-cursos' ? 'bg-gray-200' : ''}`} onClick={() => setSelectedOption('meus-cursos')}>Meus Cursos</a>
+                    <a className={`block p-4 text-gray-600 ${selectedOption === 'meus-cursos' ? 'bg-stone-400' : ''}`} 
+                    onClick={() => setSelectedOption('meus-cursos')}
+                    style={{
+                      transition: "background-color 0.5s ease",
+                      cursor: "pointer"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgb(141, 146, 140)';
+                      e.currentTarget.style.color = 'black';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '';
+                      e.currentTarget.style.color = '';
+                    }}  
+                    >Meus Cursos</a>
                 </li>
                 <li>
-                    <a className={`block p-4 text-gray-600 hover:bg-gray-200 ${selectedOption === 'comentarios' ? 'bg-gray-200' : ''}`} onClick={() => setSelectedOption('comentarios')}>Comentários</a>
+                    <a  className={`block p-4 text-gray-600 ${selectedOption === 'comentarios' ? 'bg-stone-400' : ''}`}
+                    onClick={() => setSelectedOption('comentarios')}
+                    style={{
+                      transition: "background-color 0.5s ease",
+                      cursor: "pointer"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgb(141, 146, 140)';
+                      e.currentTarget.style.color = 'black';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '';
+                      e.currentTarget.style.color = '';
+                    }}>Comentários</a>
                 </li>
                 </ul>
             </div>

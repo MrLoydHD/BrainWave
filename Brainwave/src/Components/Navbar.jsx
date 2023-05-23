@@ -18,8 +18,11 @@ function Navbar() {
     ]);
 
     useEffect(() => {
-      console.log(userType);
-    }, [userType]);
+      const storedUserType = localStorage.getItem('userType');
+      if (storedUserType) {
+        setUserType(storedUserType);
+      }
+    }, []);
 
     const handleUserChange = () => {
       setUserType(userType === 'student' ? 'teacher' : 'student');

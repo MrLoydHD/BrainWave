@@ -150,34 +150,34 @@ function CursosProf({ courses }) {
   return (
     <div>
       <div className="flex justify-between items-center mb-20">
-        <h1 className="text-2xl font-bold">Meus cursos</h1>
-        <label htmlFor="modal" className="bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={openModal}>
-          Criar curso
+        <h1 className="text-5xl font-bold">Meus cursos</h1>
+        <label htmlFor="modal" className="bg-green-600 border-green-600 hover:bg-green-900 hover:border-green-900 text-white text-2xl font-bold py-4 px-10 rounded" onClick={openModal}>
+          Criar Curso
         </label>
       </div>
       <table className="mt-4 w-full">
         <thead>
           <tr>
-            <th className="py-2 px-4 bg-gray-200 text-left"></th>
-            <th className="py-2 px-4 bg-gray-200 text-left">Nome</th>
-            <th className="py-2 px-4 bg-gray-200 text-left">Número Vídeos</th>
-            <th className="py-2 px-4 bg-gray-200 text-left">Preço</th>
-            <th className="py-2 px-4 bg-gray-200 text-left"></th>
+            <th className="py-2 px-4 lili2 font-bold text-left"></th>
+            <th className="py-2 px-4 lili2 font-bold text-left">Nome</th>
+            <th className="py-2 px-4 lili2 font-bold text-left">Número Vídeos</th>
+            <th className="py-2 px-4 lili2 font-bold text-left">Preço</th>
+            <th className="py-2 px-4 lili2 font-bold text-left"></th>
           </tr>
         </thead>
         <tbody>
           {filteredCourses.map((course) => (
-            <tr key={course.id}>
+            <tr key={course.id} className='hover:bg-opacity-30 hover:bg-teal-200'>
               <td className="py-2 px-4">
                 <Link to={`/EspacoProfessor/${course.id}`}>
                   <img className="w-30 h-20 object-cover" src={course.image} alt={'title'} />
                 </Link>
               </td>
-              <td className="py-2 px-4">
+              <td className="py-2 px-4 font-semibold">
               <Link to={`/EspacoProfessor/${course.id}`}>{course.name}</Link>
               </td>
-              <td className="py-2 px-4">{course.videos.length}</td>
-              <td className="py-2 px-4">{course.price}/mês</td>
+              <td className="py-2 px-4 font-semibold">{course.videos.length}</td>
+              <td className="py-2 px-4 font-semibold">{course.price}/mês</td>
               <td className="py-2 px-4 dropdown dropdown-end mr-4">
                 <div className="relative inline-block text-left mt-4">
                   <label tabIndex={0} onClick={handleSettings} className="btn btn-ghost btn-circle">
