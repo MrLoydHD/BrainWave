@@ -349,6 +349,47 @@
         }
       ],
       "medium_description": "Olá! Sou o João Pontes, professor do curso 'Funções Trigonométricas'. Este curso de matemática destina-se a todos que desejam aprender ou aprofundar seus conhecimentos em trigonometria. Com um total de 8 vídeos, cada um dedicado a um tema específico, este curso tem como objetivo ajudá-lo a entender e calcular as funções trigonométricas e suas aplicações práticas..."
+    },
+    {
+      "id": 4,
+      "name": "Leis de Conservação da Energia",
+      "image": "https://i.ytimg.com/vi/eLYumnnhLnQ/sddefault.jpg",
+      "subject": "Física e Química",
+      "prof": "Carlos Silva",
+      "description": "Olá! Sou a Carlos Silva, professor do curso 'Leis de Conservação da Energia'. Este curso de física e química destina-se a todos que desejam compreender as leis fundamentais que regem a conservação da energia. Com um total de 5 vídeos, cada um abordando um conceito específico, este curso tem como objetivo ajudá-lo a entender e aplicar as leis de conservação da energia em diferentes situações. Começamos com uma 'Introdução' ao curso, onde exploraremos os conceitos básicos sobre energia e suas formas. Este vídeo possui uma duração de 10 minutos e 15 segundos. Em seguida, abordaremos as leis de conservação da energia mecânica, térmica e elétrica, em vídeos com duração variando entre 8 e 12 minutos. O curso termina com um vídeo de 'Exemplos Práticos', com duração de 15 minutos, onde aplicaremos as leis de conservação da energia em situações do cotidiano. Este curso possui uma classificação de 4.2, com base em 12 avaliações. O preço é de 40 euros. Junte-se a mim neste curso e aprofunde seu conhecimento sobre as leis de conservação da energia!",
+      "price": 40,
+      "rating": 4.2,
+      "discount": 0,
+      "numReviews": 12,
+      "videoDefault": "https://www.youtube.com/watch?v=eLYumnnhLnQ",
+      "videos": [
+        {
+          "id": 1,
+          "name": "Introdução",
+          "duração": "10:15"
+        },
+        {
+          "id": 2,
+          "name": "Lei de Conservação da Energia Mecânica",
+          "duração": "9:34"
+        },
+        {
+          "id": 3,
+          "name": "Lei de Conservação da Energia Térmica",
+          "duração": "11:43"
+        },
+        {
+          "id": 4,
+          "name": "Lei de Conservação da Energia Elétrica",
+          "duração": "10:54"
+        },
+        {
+          "id": 5,
+          "name": "Exemplos Práticos",
+          "duração": "15:23"
+        }
+      ],
+      "medium_description": "Olá! Sou a Carlos Silva, professor do curso 'Leis de Conservação da Energia'. Este curso de física e química destina-se a todos que desejam compreender as leis fundamentais que regem a conservação da energia. Com um total de 5 vídeos, cada um abordando um conceito específico, este curso tem como objetivo ajudá-lo a entender e aplicar as leis de conservação da energia em diferentes situações."
     }
   ]
 }
