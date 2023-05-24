@@ -7,12 +7,14 @@ function CursosProf({ courses }) {
   const [settingsOn, setSettingsOn] = useState(false);
   const [filteredCourses, setFilteredCourses] = useState([]);
   const [lastCourseId, setLastCourseId] = useState(courses.length); 
+  const [courseToDelete, setCourseToDelete] = useState(null); 
 
   const handleSettings = () => {
     setSettingsOn(!settingsOn);
   };
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen1, setIsOpen1] = useState(false);
 
   const openModal = () => {
     setIsOpen(true);
@@ -20,6 +22,15 @@ function CursosProf({ courses }) {
 
   const closeModal = () => {
     setIsOpen(false);
+  };
+
+  const openModal1 = ( courseID ) => {
+    setIsOpen1(true);
+    setCourseToDelete(courseID)
+  };
+
+  const closeModal1 = () => {
+    setIsOpen1(false);
   };
 
   const [errors, setErrors] = useState({});
@@ -131,6 +142,7 @@ function CursosProf({ courses }) {
         if (response.ok) {
           console.log("Exclusão bem sucedida");
           // Atualizar a lista de cursos filtrados
+          closeModal1();
           const updatedFilteredCourses = filteredCourses.filter(course => course.id !== courseId);
           setFilteredCourses(updatedFilteredCourses);
         } else {
@@ -194,7 +206,7 @@ function CursosProf({ courses }) {
                         <Link to={`/EspacoProfessor/${course.id}`}>Adicionar vídeo</Link>
                       </li>
                       <li>
-                        <label onClick={() => deleteCourse(course.id)}>Apagar curso</label>
+                        <label onClick={() => openModal1(course.id)}>Apagar curso</label>
                       </li>
                     </ul>
                   )}
@@ -316,6 +328,45 @@ function CursosProf({ courses }) {
                 </div>
             </div>
         </div>
+        )}
+        {/* Fim modal */}
+        {/* Modal Eliminar Curso */}
+        {isOpen1 && (
+          <div>
+              <div className="fixed z-20 inset-0 overflow-x-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                  <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                      <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+                      <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                      <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                          <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                              <div className="sm:flex sm:items-start">
+                                  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                      <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                          Tem certeza que quer eliminar o curso?
+                                      </h3>
+                                  </div>
+                              </div>
+                              <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                                  <button
+                                      type="button"
+                                      className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-bold text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                                      onClick={() => deleteCourse(courseToDelete)}
+                                  >
+                                      Sim, eliminar
+                                  </button>
+                                  <button
+                                      type="button"
+                                      className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-bold text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                                      onClick={() => {setIsOpen1(false);}}
+                                  >
+                                      Cancelar
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
         )}
         {/* Fim modal */}
     </div>
