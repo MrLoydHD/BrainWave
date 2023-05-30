@@ -3,6 +3,7 @@
 
 
 **How to setup this project**
+
 *Before setting up this project, you should have at least version 16.0.1 of node.js installed on your machine.*
 
 1. Installation of dependicies
