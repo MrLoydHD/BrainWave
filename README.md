@@ -9,7 +9,7 @@
 1. Installation of dependicies
 
 ```
- npm install
+  npm install
 ```
 
 2. Installation of json-server (only if installation dependicies doesn´t cover this)
